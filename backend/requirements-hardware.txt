@@ -1,0 +1,6 @@
+-r requirements.txt
+tobii-research==2.1.0
+
+
+pynput==1.8.1
+six==1.17.0

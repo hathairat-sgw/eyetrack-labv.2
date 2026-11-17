@@ -1,0 +1,2201 @@
+{
+  "version": "tracks-console-source-1",
+  "status": "mapping_complete_stimuli_pending",
+  "round_order": [
+    "baseline",
+    "GB",
+    "GG",
+    "BB"
+  ],
+  "group_final_variant": {
+    "A": "Button(Bad)+Menu(Bad)",
+    "B": "Button(Bad)+Status(Bad)",
+    "C": "Menu(Bad)+Status(Bad)"
+  },
+  "tracks": [
+    {
+      "track_id": "T01",
+      "group": "A",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-status-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-52553&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A52553&show-proto-sidebar=1",
+          "starting_node_id": "888-52553"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-button-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Button(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-66940&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A66940&show-proto-sidebar=1",
+          "starting_node_id": "888-66940"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-menu-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-84245&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A84245&show-proto-sidebar=1",
+          "starting_node_id": "888-84245"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Menu(LS)"
+    },
+    {
+      "track_id": "T02",
+      "group": "A",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-status-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-52553&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A52553&show-proto-sidebar=1",
+          "starting_node_id": "888-52553"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-status-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Status(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-75587&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A75587&show-proto-sidebar=1",
+          "starting_node_id": "888-75587"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-menu-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-84245&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A84245&show-proto-sidebar=1",
+          "starting_node_id": "888-84245"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Menu(LS)"
+    },
+    {
+      "track_id": "T03",
+      "group": "A",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-status-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-52553&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A52553&show-proto-sidebar=1",
+          "starting_node_id": "888-52553"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "button-good-status-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Status(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(HS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-72683&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A72683&show-proto-sidebar=1",
+          "starting_node_id": "888-72683"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-menu-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-84245&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A84245&show-proto-sidebar=1",
+          "starting_node_id": "888-84245"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Menu(LS)"
+    },
+    {
+      "track_id": "T04",
+      "group": "A",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "button-good-status-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(LS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-43953&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A43953&show-proto-sidebar=1",
+          "starting_node_id": "888-43953"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-status-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Status(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-75587&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A75587&show-proto-sidebar=1",
+          "starting_node_id": "888-75587"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-menu-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-84245&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A84245&show-proto-sidebar=1",
+          "starting_node_id": "888-84245"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Menu(LS)"
+    },
+    {
+      "track_id": "T05",
+      "group": "A",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "button-good-status-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(LS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-43953&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A43953&show-proto-sidebar=1",
+          "starting_node_id": "888-43953"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-64081&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A64081&show-proto-sidebar=1",
+          "starting_node_id": "888-64081"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-menu-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-84245&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A84245&show-proto-sidebar=1",
+          "starting_node_id": "888-84245"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Menu(LS)"
+    },
+    {
+      "track_id": "T06",
+      "group": "A",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "button-good-status-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(LS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-43953&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A43953&show-proto-sidebar=1",
+          "starting_node_id": "888-43953"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "status-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Status(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-78436&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A78436&show-proto-sidebar=1",
+          "starting_node_id": "888-78436"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-menu-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-84245&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A84245&show-proto-sidebar=1",
+          "starting_node_id": "888-84245"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Menu(LS)"
+    },
+    {
+      "track_id": "T07",
+      "group": "A",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "menu-good-status-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(LS)+Menu(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-38155&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A38155&show-proto-sidebar=1",
+          "starting_node_id": "888-38155"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "button-good-status-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Status(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(HS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-72683&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A72683&show-proto-sidebar=1",
+          "starting_node_id": "888-72683"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-menu-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-84245&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A84245&show-proto-sidebar=1",
+          "starting_node_id": "888-84245"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Menu(LS)"
+    },
+    {
+      "track_id": "T08",
+      "group": "A",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "menu-good-status-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(LS)+Menu(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-38155&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A38155&show-proto-sidebar=1",
+          "starting_node_id": "888-38155"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "status-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Status(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-78436&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A78436&show-proto-sidebar=1",
+          "starting_node_id": "888-78436"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-menu-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-84245&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A84245&show-proto-sidebar=1",
+          "starting_node_id": "888-84245"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Menu(LS)"
+    },
+    {
+      "track_id": "T09",
+      "group": "A",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "menu-good-status-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(LS)+Menu(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-38155&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A38155&show-proto-sidebar=1",
+          "starting_node_id": "888-38155"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "button-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-69789&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A69789&show-proto-sidebar=1",
+          "starting_node_id": "888-69789"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-menu-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-84245&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A84245&show-proto-sidebar=1",
+          "starting_node_id": "888-84245"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Menu(LS)"
+    },
+    {
+      "track_id": "T10",
+      "group": "A",
+      "copy_of": "T01",
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-status-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-52553&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A52553&show-proto-sidebar=1",
+          "starting_node_id": "888-52553"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-button-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Button(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-66940&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A66940&show-proto-sidebar=1",
+          "starting_node_id": "888-66940"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-menu-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-84245&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A84245&show-proto-sidebar=1",
+          "starting_node_id": "888-84245"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Menu(LS)"
+    },
+    {
+      "track_id": "T11",
+      "group": "B",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-menu-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-55412&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A55412&show-proto-sidebar=1",
+          "starting_node_id": "888-55412"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-button-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Button(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-66940&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A66940&show-proto-sidebar=1",
+          "starting_node_id": "888-66940"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87139&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87139&show-proto-sidebar=1",
+          "starting_node_id": "888-87139"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T12",
+      "group": "B",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-menu-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-55412&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A55412&show-proto-sidebar=1",
+          "starting_node_id": "888-55412"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-status-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Status(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-75587&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A75587&show-proto-sidebar=1",
+          "starting_node_id": "888-75587"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87139&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87139&show-proto-sidebar=1",
+          "starting_node_id": "888-87139"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T13",
+      "group": "B",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-menu-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-55412&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A55412&show-proto-sidebar=1",
+          "starting_node_id": "888-55412"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "button-good-status-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Status(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(HS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-72683&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A72683&show-proto-sidebar=1",
+          "starting_node_id": "888-72683"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87139&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87139&show-proto-sidebar=1",
+          "starting_node_id": "888-87139"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T14",
+      "group": "B",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "status-good-menu-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Status(Good)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-61220&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A61220&show-proto-sidebar=1",
+          "starting_node_id": "888-61220"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-button-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Button(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-66940&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A66940&show-proto-sidebar=1",
+          "starting_node_id": "888-66940"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87139&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87139&show-proto-sidebar=1",
+          "starting_node_id": "888-87139"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T15",
+      "group": "B",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "status-good-menu-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Status(Good)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-61220&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A61220&show-proto-sidebar=1",
+          "starting_node_id": "888-61220"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-64081&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A64081&show-proto-sidebar=1",
+          "starting_node_id": "888-64081"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87139&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87139&show-proto-sidebar=1",
+          "starting_node_id": "888-87139"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T16",
+      "group": "B",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "status-good-menu-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Status(Good)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-61220&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A61220&show-proto-sidebar=1",
+          "starting_node_id": "888-61220"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "button-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-69789&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A69789&show-proto-sidebar=1",
+          "starting_node_id": "888-69789"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87139&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87139&show-proto-sidebar=1",
+          "starting_node_id": "888-87139"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T17",
+      "group": "B",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "button-good-menu-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-58316&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A58316&show-proto-sidebar=1",
+          "starting_node_id": "888-58316"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-status-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Status(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-75587&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A75587&show-proto-sidebar=1",
+          "starting_node_id": "888-75587"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87139&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87139&show-proto-sidebar=1",
+          "starting_node_id": "888-87139"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T18",
+      "group": "B",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "button-good-menu-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-58316&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A58316&show-proto-sidebar=1",
+          "starting_node_id": "888-58316"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-64081&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A64081&show-proto-sidebar=1",
+          "starting_node_id": "888-64081"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87139&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87139&show-proto-sidebar=1",
+          "starting_node_id": "888-87139"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T19",
+      "group": "B",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "button-good-menu-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-58316&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A58316&show-proto-sidebar=1",
+          "starting_node_id": "888-58316"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "status-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Status(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-78436&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A78436&show-proto-sidebar=1",
+          "starting_node_id": "888-78436"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87139&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87139&show-proto-sidebar=1",
+          "starting_node_id": "888-87139"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T20",
+      "group": "B",
+      "copy_of": "T11",
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-menu-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Menu(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-55412&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A55412&show-proto-sidebar=1",
+          "starting_node_id": "888-55412"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-button-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Button(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-66940&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A66940&show-proto-sidebar=1",
+          "starting_node_id": "888-66940"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "button-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87139&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87139&show-proto-sidebar=1",
+          "starting_node_id": "888-87139"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Button(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T21",
+      "group": "C",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-button-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Button(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-49700&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A49700&show-proto-sidebar=1",
+          "starting_node_id": "888-49700"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-button-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Button(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-66940&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A66940&show-proto-sidebar=1",
+          "starting_node_id": "888-66940"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "menu-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-81341&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A81341&show-proto-sidebar=1",
+          "starting_node_id": "888-81341"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Menu(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T22",
+      "group": "C",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-button-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Button(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-49700&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A49700&show-proto-sidebar=1",
+          "starting_node_id": "888-49700"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-status-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Status(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-75587&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A75587&show-proto-sidebar=1",
+          "starting_node_id": "888-75587"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "menu-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-81341&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A81341&show-proto-sidebar=1",
+          "starting_node_id": "888-81341"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Menu(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T23",
+      "group": "C",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-button-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Button(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-49700&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A49700&show-proto-sidebar=1",
+          "starting_node_id": "888-49700"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "button-good-status-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Status(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(HS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-72683&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A72683&show-proto-sidebar=1",
+          "starting_node_id": "888-72683"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "menu-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-81341&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A81341&show-proto-sidebar=1",
+          "starting_node_id": "888-81341"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Menu(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T24",
+      "group": "C",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "status-good-button-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Status(Good)+Button(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-46846&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A46846&show-proto-sidebar=1",
+          "starting_node_id": "888-46846"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-button-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Button(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-66940&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A66940&show-proto-sidebar=1",
+          "starting_node_id": "888-66940"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "menu-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-81341&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A81341&show-proto-sidebar=1",
+          "starting_node_id": "888-81341"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Menu(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T25",
+      "group": "C",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "status-good-button-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Status(Good)+Button(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-46846&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A46846&show-proto-sidebar=1",
+          "starting_node_id": "888-46846"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-64081&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A64081&show-proto-sidebar=1",
+          "starting_node_id": "888-64081"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "menu-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-81341&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A81341&show-proto-sidebar=1",
+          "starting_node_id": "888-81341"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Menu(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T26",
+      "group": "C",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "status-good-button-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Status(Good)+Button(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-46846&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A46846&show-proto-sidebar=1",
+          "starting_node_id": "888-46846"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "button-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-69789&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A69789&show-proto-sidebar=1",
+          "starting_node_id": "888-69789"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "menu-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-81341&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A81341&show-proto-sidebar=1",
+          "starting_node_id": "888-81341"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Menu(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T27",
+      "group": "C",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "menu-good-button-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Button(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-41059&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A41059&show-proto-sidebar=1",
+          "starting_node_id": "888-41059"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "button-good-status-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Status(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(HS)+Status(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-72683&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A72683&show-proto-sidebar=1",
+          "starting_node_id": "888-72683"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "menu-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-81341&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A81341&show-proto-sidebar=1",
+          "starting_node_id": "888-81341"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Menu(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T28",
+      "group": "C",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "menu-good-button-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Button(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-41059&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A41059&show-proto-sidebar=1",
+          "starting_node_id": "888-41059"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "status-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Status(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Status(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-78436&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A78436&show-proto-sidebar=1",
+          "starting_node_id": "888-78436"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "menu-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-81341&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A81341&show-proto-sidebar=1",
+          "starting_node_id": "888-81341"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Menu(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T29",
+      "group": "C",
+      "copy_of": null,
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "menu-good-button-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Button(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Menu(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-41059&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A41059&show-proto-sidebar=1",
+          "starting_node_id": "888-41059"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "button-good-search-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Button(Good)+Search(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(HS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-69789&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A69789&show-proto-sidebar=1",
+          "starting_node_id": "888-69789"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "menu-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-81341&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A81341&show-proto-sidebar=1",
+          "starting_node_id": "888-81341"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Menu(LS)+Status(LS)"
+    },
+    {
+      "track_id": "T30",
+      "group": "C",
+      "copy_of": "T21",
+      "ready": false,
+      "rounds": [
+        {
+          "test_index": 0,
+          "family": "baseline",
+          "variant_id": "baseline",
+          "course_id": "MDT310",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Main Web (baseline)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Baseline",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+          "starting_node_id": "888-87148"
+        },
+        {
+          "test_index": 1,
+          "family": "GB",
+          "variant_id": "search-good-button-bad",
+          "course_id": "MDT313",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Search(Good)+Button(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Button(LS)+Search(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-49700&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A49700&show-proto-sidebar=1",
+          "starting_node_id": "888-49700"
+        },
+        {
+          "test_index": 2,
+          "family": "GG",
+          "variant_id": "menu-good-button-good",
+          "course_id": "MDT312",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Good)+Button(Good)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(HS)+Button(HS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-66940&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A66940&show-proto-sidebar=1",
+          "starting_node_id": "888-66940"
+        },
+        {
+          "test_index": 3,
+          "family": "BB",
+          "variant_id": "menu-bad-status-bad",
+          "course_id": "MDT311",
+          "verified": false,
+          "course_source": "user screenshot 2",
+          "variant_label": "Menu(Bad)+Status(Bad)",
+          "mapping_verified": true,
+          "mapping_source": "https://7ess619.github.io/leb2-console/data.js; cross-checked user table",
+          "figma_variant": "Menu(LS)+Status(LS)",
+          "figma_url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-81341&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A81341&show-proto-sidebar=1",
+          "starting_node_id": "888-81341"
+        }
+      ],
+      "missing": [
+        "verified course frames and interactions",
+        "implemented variant route",
+        "four-round integration validation"
+      ],
+      "mapping_complete": true,
+      "source_group_label": "Menu(LS)+Status(LS)"
+    }
+  ],
+  "notes": [
+    "Track mapping transcribed from user table. Good/Bad labels preserved literally; no automatic HS/LS translation. All ready flags remain false until stimulus and runner validation.",
+    "T10/T20/T30 retain distinct IDs despite identical round variants to T01/T11/T21.",
+    "All 120 stages cross-checked against console HS/LS definitions. Prototype links are references, not runnable React implementation."
+  ],
+  "round_reference": [
+    {
+      "test_index": 0,
+      "course_id": "MDT310",
+      "course_name": "Eyes Tracking",
+      "late": 1,
+      "quiz_pending": 2,
+      "evidence": "user screenshot 2, 2026-11-17",
+      "verification": "console_documentation",
+      "frame_content_verified": false
+    },
+    {
+      "test_index": 1,
+      "course_id": "MDT313",
+      "course_name": "Web Programming",
+      "late": 2,
+      "quiz_pending": 1,
+      "evidence": "user screenshot 2, 2026-11-17",
+      "verification": "console_documentation",
+      "frame_content_verified": false
+    },
+    {
+      "test_index": 2,
+      "course_id": "MDT312",
+      "course_name": "UX/UI Designs",
+      "late": 1,
+      "quiz_pending": 2,
+      "evidence": "user screenshot 2, 2026-11-17",
+      "verification": "console_documentation",
+      "frame_content_verified": false
+    },
+    {
+      "test_index": 3,
+      "course_id": "MDT311",
+      "course_name": "Confirmation Bias",
+      "late": 2,
+      "quiz_pending": 1,
+      "evidence": "user screenshot 2, 2026-11-17",
+      "verification": "console_documentation",
+      "frame_content_verified": false
+    }
+  ],
+  "decision_error_rule": "0 if both late and quiz_pending match; otherwise 1",
+  "salience_definitions": {
+    "HS": "High-Salience",
+    "LS": "Low-Salience"
+  },
+  "mapping_source": "user table supplied in chat",
+  "source_url": "https://7ess619.github.io/leb2-console/data.js"
+}

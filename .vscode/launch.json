@@ -1,0 +1,13 @@
+{
+  "version":"0.2.0",
+  "configurations":[{
+    "type":"node",
+    "request":"launch",
+    "name":"EyeTrack Lab: Run all",
+    "program":"${workspaceFolder}/scripts/run.mjs",
+    "cwd":"${workspaceFolder}",
+    "console":"integratedTerminal",
+    "autoAttachChildProcesses":false,
+    "skipFiles":["<node_internals>/**"]
+  }]
+}

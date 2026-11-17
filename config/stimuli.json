@@ -1,0 +1,87 @@
+{
+  "source": "https://www.figma.com/design/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-23653",
+  "inspected": "2026-11-10",
+  "status": "partial_flow_verified",
+  "conditions": [
+    {
+      "id": "good",
+      "name": "Good + Good",
+      "verified": false
+    },
+    {
+      "id": "bad",
+      "name": "Bad + Bad",
+      "verified": false
+    },
+    {
+      "id": "mixed",
+      "name": "Mixed Bad+ Good)",
+      "verified": false
+    }
+  ],
+  "observed_mixed_labels": [
+    "(Mixed)Menu+Button",
+    "(Mixed)Button+Menu",
+    "(Mixed)Status+Menu",
+    "(Mixed)Status+Button",
+    "(Mixed)Button + Status",
+    "(Mixed)Button + Search",
+    "(Mixed)Status+Search"
+  ],
+  "notes": [
+    "Labels observed on canvas. This is not a complete interaction inventory.",
+    "UI ส่งงานทั้งหมด ไม่ได้เชื่อม flow และไม่ได้เพิ่มเข้าไปใน Mock up is a separate section.",
+    "Demo test fixture is not a reconstruction or comparison stimulus."
+  ],
+  "console_node": "1108:173438",
+  "prototype_groups": {
+    "LS+HS": [
+      "Status(LS)+Search(HS)",
+      "Menu(LS)+Search(HS)",
+      "Button(LS)+Search(HS)",
+      "Button(LS)+Status(HS)",
+      "Menu(LS)+Status(HS)",
+      "Menu(LS)+Button(HS)",
+      "Status(LS)+Button(HS)",
+      "Button(LS)+Menu(HS)",
+      "Status(LS)+Menu(HS)"
+    ],
+    "HS+HS": [
+      "Menu(HS)+Button(HS)",
+      "Menu(HS)+Status(HS)",
+      "Menu(HS)+Search(HS)",
+      "Button(HS)+Status(HS)",
+      "Status(HS)+Search(HS)",
+      "Button(HS)+Search(HS)"
+    ],
+    "LS+LS": [
+      "Button(LS)+Menu(LS)",
+      "Button(LS)+Status(LS)",
+      "Menu(LS)+Status(LS)"
+    ]
+  },
+  "preview": {
+    "route": "/stimuli/leb-preview",
+    "variant": "Status(LS)+Search(HS)",
+    "recording_enabled": false,
+    "visual_verified": false,
+    "nodes": {
+      "intro": "888:52553",
+      "classes": "888:49709",
+      "syllabus": "888:52250",
+      "assessment": "888:51745",
+      "detail": "888:51995"
+    },
+    "submit_destination": "1108:173438",
+    "quiz_tab": "no_navigation_observed",
+    "user_confirmed_prototype_behavior": "2026-11-10",
+    "pending": [
+      "original image assets",
+      "font files and exact sizing",
+      "complete syllabus and detail panels",
+      "search interaction",
+      "all remaining variant flows",
+      "viewport visual comparison"
+    ]
+  }
+}

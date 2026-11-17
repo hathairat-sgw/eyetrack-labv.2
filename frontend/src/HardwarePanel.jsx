@@ -1,0 +1,16 @@
+import React,{useEffect,useState} from 'react';
+import {api} from './api';
+export function HardwareSetup({mode,setMode,limits,setLimits,nativeMouse,setNativeMouse}){
+ const [status,setStatus]=useState(null),[error,setError]=useState('');
+ async function check(){setError('');try{setStatus(await api('/device/hardware'))}catch(e){setError(e.message)}}
+ useEffect(()=>{if(mode==='hardware')check()},[mode]);
+ return <section className="panel padded"><label>รูปแบบการบันทึก<select value={mode} onChange={e=>setMode(e.target.value)}><option value="mock">ฝึกระบบ · ข้อมูลจำลอง</option><option value="hardware">Tobii · สายตาจริง</option></select></label>{mode==='hardware'&&<><div className="spread"><strong>{status?.connected?'พบ '+status.model+' · '+status.serial:status?.message||'กำลังค้นหา Tobii…'}</strong><button className="secondary" onClick={check}>ตรวจอุปกรณ์อีกครั้ง</button></div><p>ใช้เครื่องที่ต่อ Tobii และจอทดลองเดียวกัน · ตั้งจอใน Eye Tracker Manager ก่อน · ปิด hints ของ Figma</p><label className="choice"><input type="checkbox" checked={nativeMouse} onChange={e=>setNativeMouse(e.target.checked)}/>บันทึกเมาส์ช่วงทำงานบนหน้าต่างชื่อ Figma / LEB2</label><details><summary>เกณฑ์ตรวจพิกัดหลัง Calibration</summary><p>ค่าเริ่มต้นสำหรับตรวจระบบ ต้องปรับให้ตรง protocol ของงานวิจัย ทั้งสองตาต้องผ่านทุกจุด หน่วย normalized ไม่ใช่องศา</p><label>ความคลาดเคลื่อนเฉลี่ยสูงสุด<input type="number" min="0.005" max="0.1" step="0.005" value={limits.max_mean_error_norm} onChange={e=>setLimits({...limits,max_mean_error_norm:Number(e.target.value)})}/></label><label>สัดส่วนข้อมูลใช้ได้ขั้นต่ำ (0.5–1)<input type="number" min="0.5" max="1" step="0.05" value={limits.min_valid_fraction} onChange={e=>setLimits({...limits,min_valid_fraction:Number(e.target.value)})}/></label></details><a href="/researcher/questionnaires">ตรวจข้อความยินยอมและยืนยัน protocol ใน Questionnaires</a>{error&&<p role="alert">{error}</p>}</>}</section>
+}
+export function LiveTelemetry({sid}){
+ const [data,setData]=useState(null),[error,setError]=useState('');
+ useEffect(()=>{let alive=true;const poll=async()=>{try{const d=await api('/sessions/'+sid+'/stream-status');if(alive){setData(d);setError('')}}catch(e){if(alive)setError(e.message)}};poll();const t=setInterval(poll,1000);return()=>{alive=false;clearInterval(t)}},[sid]);
+ if(error)return <p role="alert">ตรวจสถานะข้อมูลไม่ได้: {error}</p>;
+ if(!data)return null;
+ const receiving=data.recording&&data.last_sample_age_ms!==null&&data.last_sample_age_ms<1000;
+ return <section className="panel padded" aria-live="polite"><h2>{data.simulated?'ข้อมูลจำลอง':'Tobii · ข้อมูลจริง'}</h2><strong>{receiving?'● มีข้อมูลเข้า':data.recording?'รอตัวอย่างจากอุปกรณ์…':'หยุดบันทึกอยู่'}</strong><p>{data.device?.model||'ยังไม่ตรวจอุปกรณ์'} · {data.device?.serial||'—'} · ตรวจพิกัด {data.validation_passed?'ผ่าน':'ยังไม่ผ่าน'}</p><div className="form-grid"><p>ตัวอย่างที่เขียนแล้ว <b>{data.sample_count}</b></p><p>อัตรารับจริง <b>{data.observed_hz?.toFixed(1)??'—'} Hz</b></p><p>ข้อมูลล่าสุด <b>{data.last_sample_age_ms?.toFixed(0)??'—'} ms</b></p><p>ใช้ได้ ซ้าย / ขวา <b>{(data.left_valid_fraction*100).toFixed(0)}% / {(data.right_valid_fraction*100).toFixed(0)}%</b></p></div>{data.recording&&!receiving&&<p role="alert">ยังยืนยันการรับข้อมูลต่อเนื่องไม่ได้ ระบบจะหยุดรอบหากไม่มีข้อมูลเกิน 3 วินาที</p>}</section>
+}

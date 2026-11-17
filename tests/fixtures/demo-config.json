@@ -1,0 +1,76 @@
+{
+  "pre": {
+    "version": "demo-1",
+    "questions": [
+      {
+        "id": "experience",
+        "label": "คุณเคยใช้งานระบบจัดการการเรียนรู้หรือไม่?",
+        "type": "single",
+        "required": true,
+        "options": [
+          "เคย",
+          "ไม่เคย"
+        ]
+      },
+      {
+        "id": "frequency",
+        "label": "คุณใช้เว็บไซต์เพื่อการเรียนบ่อยเพียงใด?",
+        "type": "likert",
+        "required": true,
+        "options": []
+      }
+    ]
+  },
+  "post": {
+    "version": "demo-1",
+    "questions": [
+      {
+        "id": "ease",
+        "label": "คุณรู้สึกว่าเว็บไซต์ใช้งานง่ายเพียงใด?",
+        "type": "likert",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "feedback",
+        "label": "มีส่วนใดที่ทำให้สับสนหรือไม่?",
+        "type": "long",
+        "required": false,
+        "options": []
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "demo-find",
+      "name": "ทดสอบระบบบันทึก: ค้นหาบทเรียน",
+      "instruction": "นี่คือหน้าทดสอบระบบ ไม่ใช่เว็บไซต์จาก Figma ค้นหารายการ Research Methods แล้วเปิดรายละเอียด",
+      "route": "/stimuli/demo",
+      "target": "course-research",
+      "completion": "target_click",
+      "time_limit": 120,
+      "targets": [],
+      "enabled": true,
+      "source_verified": false
+    },
+    {
+      "id": "demo-resource",
+      "name": "ทดสอบระบบบันทึก: เปิดเอกสาร",
+      "instruction": "เปิดรายการ Research Methods แล้วกดเอกสาร Study guide",
+      "route": "/stimuli/demo",
+      "target": "resource-guide",
+      "completion": "target_click",
+      "time_limit": 120,
+      "targets": [],
+      "enabled": true,
+      "source_verified": false
+    }
+  ],
+  "protocol": {
+    "version": "draft-1",
+    "information": "ฉบับร่างสำหรับทดสอบระบบ Demo เท่านั้น ระบบจำลองข้อมูลสายตาและบันทึกการคลิกระหว่างงานทดลอง คุณสามารถหยุดหรือถอนตัวได้ทุกเมื่อ ข้อมูลถูกเก็บบนเครื่องนี้",
+    "consent": "ฉันเข้าใจว่านี่เป็นการทดสอบระบบ Demo และยินยอมให้บันทึกการคลิกและคำตอบที่ให้ในครั้งนี้ สามารถถอนตัวได้ทุกเมื่อ",
+    "retention": "ฉบับร่าง: เก็บไว้ในเครื่อง ไม่มีการลบอัตโนมัติ นักวิจัยต้องกำหนดนโยบายก่อนใช้จริง",
+    "approved": false
+  }
+}

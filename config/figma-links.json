@@ -1,0 +1,119 @@
+{
+  "source": "https://7ess619.github.io/leb2-console/data.js",
+  "variants": [
+    {
+      "name": "Baseline",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87148&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87148&show-proto-sidebar=1",
+      "starting_node_id": "888-87148",
+      "visual_verified": false
+    },
+    {
+      "name": "Menu(HS)+Button(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-66940&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A66940&show-proto-sidebar=1",
+      "starting_node_id": "888-66940",
+      "visual_verified": false
+    },
+    {
+      "name": "Menu(HS)+Status(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-75587&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A75587&show-proto-sidebar=1",
+      "starting_node_id": "888-75587",
+      "visual_verified": false
+    },
+    {
+      "name": "Menu(HS)+Search(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-64081&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A64081&show-proto-sidebar=1",
+      "starting_node_id": "888-64081",
+      "visual_verified": false
+    },
+    {
+      "name": "Button(HS)+Status(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-72683&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A72683&show-proto-sidebar=1",
+      "starting_node_id": "888-72683",
+      "visual_verified": false
+    },
+    {
+      "name": "Status(HS)+Search(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-78436&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A78436&show-proto-sidebar=1",
+      "starting_node_id": "888-78436",
+      "visual_verified": false
+    },
+    {
+      "name": "Button(HS)+Search(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-69789&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A69789&show-proto-sidebar=1",
+      "starting_node_id": "888-69789",
+      "visual_verified": false
+    },
+    {
+      "name": "Status(LS)+Search(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-52553&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A52553&show-proto-sidebar=1",
+      "starting_node_id": "888-52553",
+      "visual_verified": false
+    },
+    {
+      "name": "Menu(LS)+Search(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-55412&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A55412&show-proto-sidebar=1",
+      "starting_node_id": "888-55412",
+      "visual_verified": false
+    },
+    {
+      "name": "Button(LS)+Search(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-49700&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A49700&show-proto-sidebar=1",
+      "starting_node_id": "888-49700",
+      "visual_verified": false
+    },
+    {
+      "name": "Button(LS)+Status(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-46846&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A46846&show-proto-sidebar=1",
+      "starting_node_id": "888-46846",
+      "visual_verified": false
+    },
+    {
+      "name": "Menu(LS)+Status(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-61220&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A61220&show-proto-sidebar=1",
+      "starting_node_id": "888-61220",
+      "visual_verified": false
+    },
+    {
+      "name": "Menu(LS)+Button(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-58316&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A58316&show-proto-sidebar=1",
+      "starting_node_id": "888-58316",
+      "visual_verified": false
+    },
+    {
+      "name": "Status(LS)+Button(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-43953&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A43953&show-proto-sidebar=1",
+      "starting_node_id": "888-43953",
+      "visual_verified": false
+    },
+    {
+      "name": "Button(LS)+Menu(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-41059&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A41059&show-proto-sidebar=1",
+      "starting_node_id": "888-41059",
+      "visual_verified": false
+    },
+    {
+      "name": "Status(LS)+Menu(HS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-38155&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A38155&show-proto-sidebar=1",
+      "starting_node_id": "888-38155",
+      "visual_verified": false
+    },
+    {
+      "name": "Button(LS)+Menu(LS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-84245&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A84245&show-proto-sidebar=1",
+      "starting_node_id": "888-84245",
+      "visual_verified": false
+    },
+    {
+      "name": "Button(LS)+Status(LS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-87139&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A87139&show-proto-sidebar=1",
+      "starting_node_id": "888-87139",
+      "visual_verified": false
+    },
+    {
+      "name": "Menu(LS)+Status(LS)",
+      "url": "https://www.figma.com/proto/qr6rOEsr0AGFYxn8Q3mEUq/LEB2-Cheap-copy?node-id=888-81341&p=f&t=gihTjNRA5HHmV20G-1&scaling=min-zoom&content-scaling=fixed&page-id=888%3A23653&starting-point-node-id=888%3A81341&show-proto-sidebar=1",
+      "starting_node_id": "888-81341",
+      "visual_verified": false
+    }
+  ]
+}

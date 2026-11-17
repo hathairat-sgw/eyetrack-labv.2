@@ -1,0 +1,10 @@
+import React,{useEffect,useState} from 'react';
+import {api} from './api';
+import {PageHeader,ErrorBox,Loading} from './components';
+export default function TrackCatalog(){
+ const [data,setData]=useState(null),[error,setError]=useState(''),[group,setGroup]=useState('all'),[selected,setSelected]=useState('T01');
+ useEffect(()=>{api('/tracks').then(setData).catch(e=>setError(e.message))},[]);
+ if(!data)return <><ErrorBox error={error}/>{!error&&<Loading/>}</>;
+ const track=data.tracks.find(t=>t.track_id===selected);
+ return <><PageHeader title="Tracks · 30 ชุดทดลอง">ข้อมูลจากตารางที่ยืนยันและ LEB2 Console · ลำดับคงที่ 4 รอบ · Post-test ครั้งเดียวหลังครบทุก รอบ</PageHeader><div className="notice"><p>จับคู่ครบ 30 Tracks แล้ว ขณะนี้เว็บไซต์ React ยังสร้างไม่ครบทุก variant จึงยังไม่เปิดเริ่ม Track ครบ 4 รอบ ลิงก์ Figma ด้านล่างใช้ตรวจต้นฉบับโดยนักวิจัย</p></div><section className="panel padded"><div className="button-row">{['all','A','B','C'].map(g=><button className={group===g?'primary':'secondary'} key={g} onClick={()=>setGroup(g)}>{g==='all'?'ทั้งหมด 30 Tracks':'กลุ่ม '+g}</button>)}</div><div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(110px,1fr))',gap:12,marginTop:20}}>{data.tracks.filter(t=>group==='all'||t.group===group).map(t=><button className={selected===t.track_id?'primary':'secondary'} key={t.track_id} onClick={()=>setSelected(t.track_id)}>{t.track_id} · {t.group}{t.copy_of?' · ซ้ำ '+t.copy_of:''}</button>)}</div></section><section className="panel padded"><h2>{track.track_id} · กลุ่ม {track.group}</h2><p>{track.ready?'พร้อมทดลอง':'อยู่ระหว่างสร้างเว็บไซต์ทดลอง'} · configuration {data.version}</p><div className="table-scroll"><table><thead><tr><th>รอบ</th><th>วิชา</th><th>Variant</th><th>ต้นฉบับ</th></tr></thead><tbody>{track.rounds.map(r=><tr key={r.test_index}><td>Test {r.test_index}</td><td>{r.course_id}</td><td>{r.figma_variant||r.variant_label}</td><td>{r.figma_url&&<a href={r.figma_url} target="_blank" rel="noopener noreferrer">ตรวจ Figma ↗</a>}</td></tr>)}</tbody></table></div><p className="muted">Track ที่ซ้ำมีรหัสแยกและจะเก็บข้อมูลแยกกัน ไม่มีการสุ่มลำดับ 4 รอบนี้</p></section></>;
+}

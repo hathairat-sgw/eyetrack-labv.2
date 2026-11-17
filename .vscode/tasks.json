@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "EyeTrack: Run all",
+      "type": "process",
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/scripts/run.mjs"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "EyeTrack: Backend",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File scripts/start-backend.ps1",
+      "problemMatcher": []
+    },
+    {
+      "label": "EyeTrack: Frontend",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File scripts/start-frontend.ps1",
+      "problemMatcher": []
+    },
+    {
+      "label": "EyeTrack: Tests",
+      "type": "shell",
+      "command": ".venv/Scripts/python.exe -m pytest -q",
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}
