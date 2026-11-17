@@ -51,7 +51,7 @@ try{
  await page.getByRole('button',{name:'หยุดและบันทึกคลิป',exact:true}).click();
  await page.getByText('บันทึกคลิปแล้ว · รวมใน Export',{exact:true}).waitFor({timeout:20000});
  await page.getByRole('button',{name:'จบรอบ / หยุดบันทึก',exact:true}).click();
- await page.getByRole('button',{name:'ยืนยันคำตอบและจบรอบ',exact:true}).waitFor();
+ await page.getByRole('button',{name:'บันทึกคำตอบ → ไปรอบ 2',exact:true}).waitFor();
  const session=JSON.parse(readFileSync(path.join(prepared.folder,'session.json'),'utf8'));
  assert.ok(session.trials[0].gaze_count>0);assert.equal(session.mode,'mock');assert.equal(session.videos[0].status,'completed');assert.ok(session.videos[0].bytes>1000);
  const video=readFileSync(path.join(prepared.folder,session.videos[0].filename));assert.equal(video.subarray(0,4).toString('hex'),'1a45dfa3');

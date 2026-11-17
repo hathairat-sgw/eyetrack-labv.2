@@ -1,4 +1,5 @@
 import math
+import sys
 import os
 import random
 import threading
@@ -64,7 +65,7 @@ class TobiiDevice:
             devices = sdk.find_all_eyetrackers()
             if not devices:
                 self.tracker = None
-                return {"connected": False, "simulated": False, "message": "ไม่พบ Tobii กรุณาตรวจสายและ Eye Tracker Manager"}
+                return {"connected": False, "simulated": False, "python_executable": sys.executable, "message": "ไม่พบ Tobii บนเครื่องที่รัน backend นี้ ตรวจสาย USB และ active display ใน Eye Tracker Manager ถ้า Tobii อยู่อีกเครื่อง ต้องเปิดโปรแกรมบนเครื่องนั้น"}
             serial = os.environ.get("EYETRACK_TOBII_SERIAL")
             if serial:
                 devices = tuple(d for d in devices if d.serial_number == serial)

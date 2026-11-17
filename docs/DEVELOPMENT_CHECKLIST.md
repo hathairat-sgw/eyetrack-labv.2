@@ -174,3 +174,9 @@ Task บน Figma ยังคงใช้ manual start/end ของนัก�
 
 - [x] Final verification: 59 Python tests, 4 Node tests, production build and pip check passed.
 - [ ] Physical Tobii acceptance on the desktop remains pending.
+
+## Continuous rounds / device troubleshooting
+- [x] Round scoring explicitly advances to next round 2/3/4, then Post-test.
+- [x] Figma links reuse a named session tab instead of accumulating tabs.
+- [x] Hardware discovery refreshes every 5 seconds and explains local-backend requirement.
+- [ ] Physical connection requires the device computer and its diagnostic report; not verified remotely.
