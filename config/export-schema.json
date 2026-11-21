@@ -1,0 +1,610 @@
+{
+  "schema_version": 3,
+  "csv": {
+    "participants.csv": {
+      "required_columns": [
+        "participant_id",
+        "session_id",
+        "mode",
+        "condition",
+        "created_at",
+        "track_id",
+        "group",
+        "study_status",
+        "calibration_status",
+        "start_time",
+        "end_time",
+        "completion_status",
+        "practice_completed"
+      ],
+      "fields": {
+        "participant_id": {
+          "description": "Pseudonymous participant identifier P001-P030; legacy identifiers are preserved",
+          "nullable": true
+        },
+        "session_id": {
+          "description": "Immutable session identifier; join all files using participant_id and session_id",
+          "nullable": true
+        },
+        "mode": {
+          "description": "mock means synthetic test data; hardware means SDK collection",
+          "nullable": true
+        },
+        "condition": {
+          "description": "Experimental condition for this trial; participant summary uses baseline_GB_GG_BB for external tracks",
+          "nullable": true
+        },
+        "created_at": {
+          "description": "Session creation UTC ISO-8601 timestamp",
+          "nullable": true
+        },
+        "track_id": {
+          "description": "Assigned immutable T01-T30 track identifier",
+          "nullable": true
+        },
+        "group": {
+          "description": "Track group A, B, or C",
+          "nullable": true
+        },
+        "study_status": {
+          "description": "Current persisted session state",
+          "nullable": true
+        },
+        "calibration_status": {
+          "description": "verified only for passed independent hardware validation; demo_completed never certifies hardware",
+          "nullable": true
+        },
+        "start_time": {
+          "description": "UTC ISO-8601 session creation or externally recorded trial start timestamp",
+          "nullable": true
+        },
+        "end_time": {
+          "description": "UTC ISO-8601 session completion/withdrawal or externally recorded trial end; blank if unknown",
+          "nullable": true
+        },
+        "completion_status": {
+          "description": "completed or incomplete based on persisted session state",
+          "nullable": true
+        },
+        "practice_completed": {
+          "description": "Whether the new workflow completed all four separate practice activities; blank for legacy sessions",
+          "nullable": true
+        }
+      }
+    },
+    "pre_test.csv": {
+      "required_columns": [
+        "participant_id",
+        "session_id",
+        "version",
+        "question_id",
+        "answer",
+        "submitted_at",
+        "response",
+        "timestamp",
+        "questionnaire_version"
+      ],
+      "fields": {
+        "participant_id": {
+          "description": "Pseudonymous participant identifier P001-P030; legacy identifiers are preserved",
+          "nullable": true
+        },
+        "session_id": {
+          "description": "Immutable session identifier; join all files using participant_id and session_id",
+          "nullable": true
+        },
+        "version": {
+          "description": "Original questionnaire version alias",
+          "nullable": true
+        },
+        "question_id": {
+          "description": "Question identifier in session snapshot",
+          "nullable": true
+        },
+        "answer": {
+          "description": "Original JSON-encoded submitted response",
+          "nullable": true
+        },
+        "submitted_at": {
+          "description": "Original questionnaire submission UTC ISO-8601 timestamp",
+          "nullable": true
+        },
+        "response": {
+          "description": "JSON-encoded response; alias of answer",
+          "nullable": true
+        },
+        "timestamp": {
+          "description": "Questionnaire submission UTC ISO-8601 or original browser performance.now event milliseconds, depending on file",
+          "nullable": true
+        },
+        "questionnaire_version": {
+          "description": "Version of the immutable questionnaire snapshot",
+          "nullable": true
+        }
+      }
+    },
+    "post_test.csv": {
+      "required_columns": [
+        "participant_id",
+        "session_id",
+        "version",
+        "question_id",
+        "answer",
+        "submitted_at",
+        "response",
+        "timestamp",
+        "questionnaire_version"
+      ],
+      "fields": {
+        "participant_id": {
+          "description": "Pseudonymous participant identifier P001-P030; legacy identifiers are preserved",
+          "nullable": true
+        },
+        "session_id": {
+          "description": "Immutable session identifier; join all files using participant_id and session_id",
+          "nullable": true
+        },
+        "version": {
+          "description": "Original questionnaire version alias",
+          "nullable": true
+        },
+        "question_id": {
+          "description": "Question identifier in session snapshot",
+          "nullable": true
+        },
+        "answer": {
+          "description": "Original JSON-encoded submitted response",
+          "nullable": true
+        },
+        "submitted_at": {
+          "description": "Original questionnaire submission UTC ISO-8601 timestamp",
+          "nullable": true
+        },
+        "response": {
+          "description": "JSON-encoded response; alias of answer",
+          "nullable": true
+        },
+        "timestamp": {
+          "description": "Questionnaire submission UTC ISO-8601 or original browser performance.now event milliseconds, depending on file",
+          "nullable": true
+        },
+        "questionnaire_version": {
+          "description": "Version of the immutable questionnaire snapshot",
+          "nullable": true
+        }
+      }
+    },
+    "gaze.csv": {
+      "required_columns": [
+        "participant_id",
+        "session_id",
+        "trial_id",
+        "task_id",
+        "mode",
+        "device_timestamp",
+        "system_timestamp",
+        "backend_received_us",
+        "left_gaze_x",
+        "left_gaze_y",
+        "left_validity",
+        "right_gaze_x",
+        "right_gaze_y",
+        "right_validity",
+        "raw_json",
+        "track_id",
+        "test_id",
+        "condition",
+        "received_timestamp",
+        "left_gaze_validity",
+        "right_gaze_validity",
+        "gaze_x",
+        "gaze_y",
+        "coordinate_system",
+        "screen_width",
+        "screen_height",
+        "sampling_frequency",
+        "left_pupil_diameter",
+        "right_pupil_diameter"
+      ],
+      "fields": {
+        "participant_id": {
+          "description": "Pseudonymous participant identifier P001-P030; legacy identifiers are preserved",
+          "nullable": true
+        },
+        "session_id": {
+          "description": "Immutable session identifier; join all files using participant_id and session_id",
+          "nullable": true
+        },
+        "trial_id": {
+          "description": "Immutable attempt identifier; retries retain separate identifiers",
+          "nullable": true
+        },
+        "task_id": {
+          "description": "Task identifier; external-0 through external-3 for external workflow",
+          "nullable": true
+        },
+        "mode": {
+          "description": "mock means synthetic test data; hardware means SDK collection",
+          "nullable": true
+        },
+        "device_timestamp": {
+          "description": "Original Tobii device clock microseconds; mock uses synthetic monotonic timestamps",
+          "nullable": true
+        },
+        "system_timestamp": {
+          "description": "Original Tobii SDK system clock microseconds; mock uses backend monotonic clock",
+          "nullable": true
+        },
+        "backend_received_us": {
+          "description": "Backend perf_counter receipt time in microseconds; scoped to trial clock_segment_id",
+          "nullable": true
+        },
+        "left_gaze_x": {
+          "description": "Original left-eye normalized display x; check validity before use",
+          "nullable": true
+        },
+        "left_gaze_y": {
+          "description": "Original left-eye normalized display y; check validity before use",
+          "nullable": true
+        },
+        "left_validity": {
+          "description": "Original left-eye SDK validity value; 1 valid, 0 invalid",
+          "nullable": true
+        },
+        "right_gaze_x": {
+          "description": "Original right-eye normalized display x; check validity before use",
+          "nullable": true
+        },
+        "right_gaze_y": {
+          "description": "Original right-eye normalized display y; check validity before use",
+          "nullable": true
+        },
+        "right_validity": {
+          "description": "Original right-eye SDK validity value; 1 valid, 0 invalid",
+          "nullable": true
+        },
+        "raw_json": {
+          "description": "Original SDK sample serialized as JSON; nonfinite raw values preserved as strings",
+          "nullable": true
+        },
+        "track_id": {
+          "description": "Assigned immutable T01-T30 track identifier",
+          "nullable": true
+        },
+        "test_id": {
+          "description": "External test index: 0 baseline, 1 GB, 2 GG, 3 BB",
+          "nullable": true
+        },
+        "condition": {
+          "description": "Experimental condition for this trial; participant summary uses baseline_GB_GG_BB for external tracks",
+          "nullable": true
+        },
+        "received_timestamp": {
+          "description": "Alias of backend_received_us, not UTC wall clock",
+          "nullable": true
+        },
+        "left_gaze_validity": {
+          "description": "Alias of left_validity",
+          "nullable": true
+        },
+        "right_gaze_validity": {
+          "description": "Alias of right_validity",
+          "nullable": true
+        },
+        "gaze_x": {
+          "description": "Mean x of finite valid eyes; one eye uses that eye; no valid eye is blank",
+          "nullable": true
+        },
+        "gaze_y": {
+          "description": "Mean y of finite valid eyes; one eye uses that eye; no valid eye is blank",
+          "nullable": true
+        },
+        "coordinate_system": {
+          "description": "normalized_display for gaze or viewport_css_pixels for browser events",
+          "nullable": true
+        },
+        "screen_width": {
+          "description": "Browser screen.width CSS pixels from the trial metadata snapshot; blank if unavailable",
+          "nullable": true
+        },
+        "screen_height": {
+          "description": "Browser screen.height CSS pixels from the trial metadata snapshot; blank if unavailable",
+          "nullable": true
+        },
+        "sampling_frequency": {
+          "description": "Configured device sampling frequency in Hz; mock requests 60 Hz; actual rate is in quality report",
+          "nullable": true
+        },
+        "left_pupil_diameter": {
+          "description": "Left pupil diameter mm only when SDK pupil validity is 1; otherwise blank",
+          "nullable": true
+        },
+        "right_pupil_diameter": {
+          "description": "Right pupil diameter mm only when SDK pupil validity is 1; otherwise blank",
+          "nullable": true
+        }
+      }
+    },
+    "clicks.csv": {
+      "required_columns": [
+        "participant_id",
+        "session_id",
+        "trial_id",
+        "task_id",
+        "event_id",
+        "event_type",
+        "timestamp",
+        "backend_received_us",
+        "client_x",
+        "client_y",
+        "screen_x",
+        "screen_y",
+        "scroll_x",
+        "scroll_y",
+        "page_url",
+        "target_element_id",
+        "viewport_json",
+        "track_id",
+        "test_id",
+        "condition",
+        "x",
+        "y",
+        "coordinate_system",
+        "target_component",
+        "target_state",
+        "event_source",
+        "interaction_category"
+      ],
+      "fields": {
+        "participant_id": {
+          "description": "Pseudonymous participant identifier P001-P030; legacy identifiers are preserved",
+          "nullable": true
+        },
+        "session_id": {
+          "description": "Immutable session identifier; join all files using participant_id and session_id",
+          "nullable": true
+        },
+        "trial_id": {
+          "description": "Immutable attempt identifier; retries retain separate identifiers",
+          "nullable": true
+        },
+        "task_id": {
+          "description": "Task identifier; external-0 through external-3 for external workflow",
+          "nullable": true
+        },
+        "event_id": {
+          "description": "Browser event deduplication identifier",
+          "nullable": true
+        },
+        "event_type": {
+          "description": "Actual browser event type; external Figma DOM events are unavailable",
+          "nullable": true
+        },
+        "timestamp": {
+          "description": "Questionnaire submission UTC ISO-8601 or original browser performance.now event milliseconds, depending on file",
+          "nullable": true
+        },
+        "backend_received_us": {
+          "description": "Backend perf_counter receipt time in microseconds; scoped to trial clock_segment_id",
+          "nullable": true
+        },
+        "client_x": {
+          "description": "Original browser clientX CSS pixels",
+          "nullable": true
+        },
+        "client_y": {
+          "description": "Original browser clientY CSS pixels",
+          "nullable": true
+        },
+        "screen_x": {
+          "description": "Original browser screenX CSS pixels; not native mouse physical pixels",
+          "nullable": true
+        },
+        "screen_y": {
+          "description": "Original browser screenY CSS pixels; not native mouse physical pixels",
+          "nullable": true
+        },
+        "scroll_x": {
+          "description": "Browser horizontal document scroll offset in CSS pixels",
+          "nullable": true
+        },
+        "scroll_y": {
+          "description": "Browser vertical document scroll offset in CSS pixels",
+          "nullable": true
+        },
+        "page_url": {
+          "description": "Browser page URL reported by instrumented native web stimulus",
+          "nullable": true
+        },
+        "target_element_id": {
+          "description": "Actual DOM target identifier; no inferred Figma target labels",
+          "nullable": true
+        },
+        "viewport_json": {
+          "description": "Original browser viewport, scroll, DPI and layout metadata as JSON",
+          "nullable": true
+        },
+        "track_id": {
+          "description": "Assigned immutable T01-T30 track identifier",
+          "nullable": true
+        },
+        "test_id": {
+          "description": "External test index: 0 baseline, 1 GB, 2 GG, 3 BB",
+          "nullable": true
+        },
+        "condition": {
+          "description": "Experimental condition for this trial; participant summary uses baseline_GB_GG_BB for external tracks",
+          "nullable": true
+        },
+        "x": {
+          "description": "Alias of client_x for browser events",
+          "nullable": true
+        },
+        "y": {
+          "description": "Alias of client_y for browser events",
+          "nullable": true
+        },
+        "coordinate_system": {
+          "description": "normalized_display for gaze or viewport_css_pixels for browser events",
+          "nullable": true
+        },
+        "target_component": {
+          "description": "Blank unless a component is established by instrumentation; no inference",
+          "nullable": true
+        },
+        "target_state": {
+          "description": "Blank unless a component state is established by instrumentation; no inference",
+          "nullable": true
+        },
+        "event_source": {
+          "description": "native_web_dom for browser-instrumented events; Windows events are in mouse.csv",
+          "nullable": true
+        },
+        "interaction_category": {
+          "description": "prototype_interaction for instrumented stimulus events; experiment controls are excluded",
+          "nullable": true
+        }
+      }
+    },
+    "trials.csv": {
+      "required_columns": [
+        "participant_id",
+        "session_id",
+        "trial_id",
+        "task_id",
+        "started_us",
+        "ended_us",
+        "duration_ms",
+        "status",
+        "reason",
+        "click_count",
+        "gaze_count",
+        "native_mouse_count",
+        "native_click_count",
+        "track_id",
+        "test_id",
+        "condition",
+        "start_time",
+        "end_time",
+        "completion",
+        "error_count",
+        "recording_status"
+      ],
+      "fields": {
+        "participant_id": {
+          "description": "Pseudonymous participant identifier P001-P030; legacy identifiers are preserved",
+          "nullable": true
+        },
+        "session_id": {
+          "description": "Immutable session identifier; join all files using participant_id and session_id",
+          "nullable": true
+        },
+        "trial_id": {
+          "description": "Immutable attempt identifier; retries retain separate identifiers",
+          "nullable": true
+        },
+        "task_id": {
+          "description": "Task identifier; external-0 through external-3 for external workflow",
+          "nullable": true
+        },
+        "started_us": {
+          "description": "Backend perf_counter start microseconds in the trial clock segment",
+          "nullable": true
+        },
+        "ended_us": {
+          "description": "Backend perf_counter end microseconds; blank after interrupted unknown end",
+          "nullable": true
+        },
+        "duration_ms": {
+          "description": "Measured trial duration milliseconds; blank when end is unknown",
+          "nullable": true
+        },
+        "status": {
+          "description": "Persisted trial status: completed, incomplete, recording, failed, or awaiting_answers",
+          "nullable": true
+        },
+        "reason": {
+          "description": "Recorded reason for interruption or failure; blank when none recorded",
+          "nullable": true
+        },
+        "click_count": {
+          "description": "Count of persisted click events in instrumented native web stimulus; not Figma DOM clicks",
+          "nullable": true
+        },
+        "gaze_count": {
+          "description": "Count of persisted gaze samples reconciled from raw CSV on export",
+          "nullable": true
+        },
+        "native_mouse_count": {
+          "description": "Count of Windows mouse events recorded in mouse.csv, if enabled",
+          "nullable": true
+        },
+        "native_click_count": {
+          "description": "Count of Windows mouse button press events, not DOM-verified clicks",
+          "nullable": true
+        },
+        "track_id": {
+          "description": "Assigned immutable T01-T30 track identifier",
+          "nullable": true
+        },
+        "test_id": {
+          "description": "External test index: 0 baseline, 1 GB, 2 GG, 3 BB",
+          "nullable": true
+        },
+        "condition": {
+          "description": "Experimental condition for this trial; participant summary uses baseline_GB_GG_BB for external tracks",
+          "nullable": true
+        },
+        "start_time": {
+          "description": "UTC ISO-8601 session creation or externally recorded trial start timestamp",
+          "nullable": true
+        },
+        "end_time": {
+          "description": "UTC ISO-8601 session completion/withdrawal or externally recorded trial end; blank if unknown",
+          "nullable": true
+        },
+        "completion": {
+          "description": "Whether this trial has completed status",
+          "nullable": true
+        },
+        "error_count": {
+          "description": "Recorded Decision Error (0 or 1) from the round answers; blank if unavailable; not general UI error count",
+          "nullable": true
+        },
+        "recording_status": {
+          "description": "Persisted trial recording/completion status",
+          "nullable": true
+        }
+      }
+    }
+  },
+  "json": {
+    "session.json": {
+      "required": [
+        "participant_id",
+        "session_id",
+        "mode",
+        "snapshot",
+        "trials",
+        "metadata",
+        "responses"
+      ],
+      "description": "Complete session metadata, protocol/questionnaire snapshot, assignment, calibration and validation evidence, clock segment mappings, device versions and state"
+    },
+    "quality_report.json": {
+      "required": [
+        "participant_id",
+        "session_id",
+        "gaze_sample_count",
+        "valid_gaze_percentage",
+        "missing_data",
+        "trials",
+        "overall_quality_warnings"
+      ],
+      "description": "Measurements from persisted gaze and session state; thresholds do not certify physical acceptance"
+    }
+  },
+  "text": {
+    "README.txt": "Dataset description, joins, units, missing-value rules, timebases, assignment, versions and complete CSV dictionary"
+  }
+}

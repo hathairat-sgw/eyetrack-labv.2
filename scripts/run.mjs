@@ -1,4 +1,4 @@
-import {spawn} from 'node:child_process';
+import {spawn,spawnSync} from 'node:child_process';
 import {existsSync,mkdtempSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {fileURLToPath} from 'node:url';
@@ -37,6 +37,8 @@ async function main(){
  const python=!args.has('--mock')&&existsSync(hardware)?hardware:path.join(root,'.venv','Scripts','python.exe');
  const vite=path.join(root,'frontend','node_modules','vite','bin','vite.js');
  if(!existsSync(python)||!existsSync(vite))throw Error('Dependencies missing. Run scripts/setup.ps1 first. See README.');
+ const probe=spawnSync(python,['-c','import fastapi, uvicorn, pydantic; assert int(pydantic.__version__.split(".")[0])>=2'],{cwd:root,windowsHide:true,encoding:'utf8',timeout:15000});
+ if(probe.status!==0)throw Error('Python dependencies are missing or incompatible. Run Setup-Windows.cmd. '+(probe.stderr||probe.error?.message||''));
  const ports=await Promise.all([occupied(backendPort),occupied(frontendPort)]);
  if(ports.some(Boolean))throw Error(`Port ${ports.map((v,i)=>v?[backendPort,frontendPort][i]:null).filter(Boolean).join(', ')} is in use. Stop the previous run first. No existing process was stopped.`);
  const env={...process.env,PYTHONUTF8:'1',PYTHONPATH:root,EYETRACK_BACKEND_PORT:String(backendPort),EYETRACK_FRONTEND_PORT:String(frontendPort),EYETRACK_BACKEND_URL:`http://127.0.0.1:${backendPort}`};

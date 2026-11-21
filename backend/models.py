@@ -1,10 +1,15 @@
 from typing import Literal
 from pydantic import BaseModel, Field, model_validator, StrictInt
 
+class QuestionCondition(BaseModel):
+    question_id: str
+    equals: str | StrictInt
+
 class Question(BaseModel):
     id: str = Field(pattern=r"^[A-Za-z0-9_-]+$")
     label: str = Field(min_length=1, max_length=2000)
     type: Literal["single", "multiple", "likert", "short", "long", "number"]
+    show_if: QuestionCondition | None = None
     section: str = ""
     required: bool = True
     options: list[str] = Field(default_factory=list, max_length=30)
@@ -26,6 +31,11 @@ class Questionnaire(BaseModel):
     def unique(self):
         if len({q.id for q in self.questions}) != len(self.questions):
             raise ValueError("Question IDs must be unique")
+        seen=set()
+        for q in self.questions:
+            if q.show_if and q.show_if.question_id not in seen:
+                raise ValueError('Conditional questions must reference an earlier question')
+            seen.add(q.id)
         return self
 
 class Task(BaseModel):

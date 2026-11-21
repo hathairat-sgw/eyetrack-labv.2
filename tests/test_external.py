@@ -11,6 +11,9 @@ def setup(tmp_path):
  s=x.create(e.add_participant()['participant_id'],'T01');sid=s['session_id']
  e.attach(sid,'participant');e.step(sid,'information');e.step(sid,'consent');e.calibration_start(sid)
  for i in range(5):e.calibration_point(sid,CalibrationPoint(index=i,viewport={'fullscreen':True},presented_at=i))
+ from backend.practice import practice_action
+ if e.get(sid)['state']=='practice':
+  for action in ('button','menu','search','status','complete'):practice_action(e,sid,action)
  e.answers(sid,'pre',{'department':'ข้อมูลทดสอบ','age':22,'gender':'หญิง','year':'ปี 4','leb2_frequency':'บางครั้ง'});e.metadata(sid,{'viewport':{'width':1440},'synchronization':[{}]})
  return e,x,sid
 CHECKS=dict(starting_frame=True,display=True,fullscreen=True,hints_off=True)

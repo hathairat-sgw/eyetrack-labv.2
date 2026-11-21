@@ -3,7 +3,8 @@ export default function QuestionnaireForm({definition,onSubmit,button='ส่ง
  const [answers,setAnswers]=useState(initialDraft?.answers||{}),[page,setPage]=useState(0),[saving,setSaving]=useState(''),[error,setError]=useState(''),[sending,setSending]=useState(false),[done,setDone]=useState(false);
  const revision=useRef(initialDraft?.revision||0),queue=useRef(Promise.resolve()),latest=useRef(answers),dirty=useRef(false),locked=useRef(false);
  const pages=[];
- for(const q of definition.questions){let group=pages.at(-1);if(!group||group.section!==q.section||(!q.section&&group.questions.length===5)){group={section:q.section||'',questions:[]};pages.push(group)}group.questions.push(q)}
+ const visible=q=>!q.show_if||answers[q.show_if.question_id]===q.show_if.equals;
+ for(const q of definition.questions.filter(visible)){let group=pages.at(-1);if(!group||group.section!==q.section||(!q.section&&group.questions.length===5)){group={section:q.section||'',questions:[]};pages.push(group)}group.questions.push(q)}
  if(!pages.length)pages.push({section:'',questions:[]});
  const current=pages[Math.min(page,pages.length-1)];
  const save=()=>{if(!onSaveDraft)return Promise.resolve();const snapshot=structuredClone(latest.current);queue.current=queue.current.catch(()=>{}).then(async()=>{setSaving('กำลังบันทึกแบบร่าง…');try{const d=await onSaveDraft(snapshot,revision.current);revision.current=d.revision;setSaving('บันทึกแบบร่างแล้ว');setError('')}catch(e){setSaving('ยังไม่บันทึก');setError(e.message);throw e}});return queue.current};
@@ -13,7 +14,7 @@ export default function QuestionnaireForm({definition,onSubmit,button='ส่ง
  async function submit(e){e.preventDefault();if(locked.current)return;setError('');if(current.questions.some(q=>!valid(q))){setError('กรุณาตอบคำถามที่จำเป็นให้ครบ');return}
  if(page<pages.length-1){setPage(page+1);return}
  const bad=pages.findIndex(g=>g.questions.some(q=>!valid(q)));if(bad>=0){setPage(bad);setError('กรุณาตอบคำถามที่จำเป็นให้ครบ');return}
- locked.current=true;setSending(true);try{await save();await onSubmit(latest.current);setDone(true)}catch(e){setError(e.message)}finally{locked.current=false;setSending(false)}
+ locked.current=true;setSending(true);try{await save();await onSubmit(Object.fromEntries(Object.entries(latest.current).filter(([id])=>definition.questions.some(q=>q.id===id&&visible(q)))));setDone(true)}catch(e){setError(e.message)}finally{locked.current=false;setSending(false)}
  }
  if(done)return <div className="success-box" role="status">{onSaveDraft?'บันทึกแบบสอบถามสำเร็จแล้ว':'ตรวจคำตอบครบแล้ว (โหมดตัวอย่าง ไม่บันทึก)'}</div>;
  return <form onSubmit={submit}><div className="spread"><strong>ส่วน {page+1} / {pages.length}</strong><span role="status">{saving}</span></div><progress value={page+1} max={pages.length} style={{width:'100%'}}/>{current.section&&<h2>{current.section}</h2>}

@@ -66,5 +66,6 @@ class Validation:
                 v["finished_at"]=utc()
                 v["passed"]=all(p["metrics"]["passed"] for p in v["points"])
                 if v["passed"]:
-                    s["state"]="pre" if "pre" not in s["responses"] else "instructions"
+                    from .practice import after_calibration
+                    s['state']=after_calibration(s)
             return self.e.commit(s)

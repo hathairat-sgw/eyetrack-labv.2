@@ -4,6 +4,9 @@ from .engine import require,utc
 from .models import CreateSession
 from .storage import read_json,atomic_json
 from pathlib import Path
+from .tracks import validate_tracks
+from .practice import VERSION
+from .assignment import plan
 ROOT=Path(__file__).resolve().parents[1]
 
 def valid_url(url):
@@ -16,6 +19,14 @@ def public_session(s):
     result=copy.deepcopy(s)
     result.pop('external',None);result.pop('audit',None);result.pop('condition',None)
     result.pop('videos',None);result.pop('validation_attempts',None)
+    def redact(value):
+        if isinstance(value,dict):
+            for key in list(value):
+                if key in ('serial','address','python_executable','sdk_clock_samples'):value.pop(key,None)
+                else:redact(value[key])
+        elif isinstance(value,list):
+            for item in value:redact(item)
+    redact(result)
     if result.get('validation'):
         for point in result['validation'].get('points',[]):point.pop('samples',None)
     if s['task_index'] < 4:
@@ -48,17 +59,23 @@ class External:
         atomic_json(self.e.storage.root/'prototypes.json',d);return d
     def catalog(self,mode=None):
         d=read_json(ROOT/'config/tracks.json')
+        assignments=plan(self.e,mode or 'mock')
+        d['assignment']=assignments
+        d['validation']=validate_tracks(d)
         for t in d['tracks']:
-            sessions=[s for s in self.e.sessions.values() if s.get('external',{}).get('track_id')==t['track_id'] and s['state']!='withdrawn' and (mode is None or s['mode']==mode)]
-            t['allocations']=[{'session_id':s['session_id'],'participant_id':s['participant_id'],'status':'completed' if s['state']=='completed' else 'in_progress' if s['consent'] else 'reserved'} for s in sessions]
+            sessions=[s for s in self.e.sessions.values() if s.get('external',{}).get('track_id')==t['track_id'] and (s['state']!='withdrawn' or s.get('consent')) and (mode is None or s['mode']==mode)]
+            t['assigned_participant_id']=next((p for p,tid in assignments['assignments'].items() if tid==t['track_id']),None)
+            t['allocations']=[{'session_id':s['session_id'],'participant_id':s['participant_id'],'status':'withdrawn' if s['state']=='withdrawn' else 'completed' if s['state']=='completed' else 'in_progress' if s['consent'] else 'reserved'} for s in sessions]
             t['allocation_status']=t['allocations'][-1]['status'] if sessions else 'available'
         return d
     def create(self,pid,track_id,mode="mock",limits=None,native_mouse=False):
         with self.e.lock:
             require(mode in ("mock","hardware"), "โหมดไม่ถูกต้อง",422)
             if mode=="hardware":
+                require(validate_tracks()['valid'], 'Track validation failed; hardware collection is blocked')
                 require(self.e.config["protocol"]["approved"], "ตรวจข้อความยินยอมและยืนยัน protocol ใน Questionnaires ก่อนใช้ Tobii จริง")
                 require(self.e.devices["hardware"].status().get("connected"), "ไม่พบ Tobii บนเครื่องนี้ ตรวจสายและ Eye Tracker Manager")
+            require(not any(s['participant_id']==pid and s['mode']==mode and s.get('task_mode')=='figma_external' and (s['state']!='withdrawn' or s.get('consent')) for s in self.e.sessions.values()), 'Participant already has a session; resume it instead')
             track=next((t for t in self.catalog(mode)['tracks'] if t['track_id']==track_id),None)
             require(track and track['allocation_status']=='available','Track ไม่ว่างหรือไม่พบ')
             task_id=next((t['id'] for t in self.e.config['tasks'] if t['enabled'] and t['route']=='/stimuli/demo'),None)
@@ -71,7 +88,7 @@ class External:
                 key=registry['round_reference'][r['test_index']]
                 rounds.append({**r,'starting_node_id':v['starting_node_id'],'prototype_url':v['url'],'link_status':v.get('link_status','unverified'),'expected_late':key['late'],'expected_quiz':key['quiz_pending']})
             s=self.e.create(CreateSession(participant_id=pid,task_ids=[task_id],mode=mode),external_authorized=True)
-            s.update(mode=mode,schema_version=2,task_mode='figma_external',external={'track_id':track_id,'group':track['group'],'duplicate_of':track['copy_of'],'configuration_version':registry['version'],'rounds':rounds},audit=[],stimulus_status='external_figma_manual_telemetry_unavailable')
+            s.update(workflow_version=VERSION,practice_completed=False,practice_attempts=[],assignment={'method':'assigned','seed':None,'assigned_at':utc()},mode=mode,schema_version=2,task_mode='figma_external',external={'track_id':track_id,'group':track['group'],'duplicate_of':track['copy_of'],'configuration_version':registry['version'],'rounds':rounds},audit=[],stimulus_status='external_figma_manual_telemetry_unavailable')
             if mode=="hardware":
                 from .quality import DEFAULT_LIMITS
                 s['validation_limits']=copy.deepcopy(limits or DEFAULT_LIMITS)
@@ -87,6 +104,8 @@ class External:
     def start(self,sid,client,checks):
         with self.e.lock:
             s=self.e.get(sid);require(s.get('task_mode')=='figma_external','โหมดไม่ตรง')
+            if s['mode']=='hardware':require(validate_tracks()['valid'],'Track validation failed')
+            if s.get('workflow_version')==VERSION:require(s.get('practice_completed'),'Practice is required')
             require(all(checks.get(k) is True for k in ['starting_frame','display','fullscreen','hints_off']),'ยืนยันหน้าตั้งต้น จอ fullscreen และ hints ก่อน')
             require(s['state']=='instructions' and 0 <= s['task_index'] < 4,'รอบนี้ยังไม่พร้อมเริ่มหรือสิ้นสุดแล้ว')
             r=s['external']['rounds'][s['task_index']];require(r['link_status']=='verified','ต้องตรวจลิงก์ก่อนเริ่ม')
@@ -117,6 +136,19 @@ class External:
             s['audit'].append({'action':'answer','actor':'researcher','at':utc(),'trial_id':s['trials'][-1]['trial_id']})
             s['task_index']+=1;s['state']='post' if s['task_index']==4 else 'instructions'
             return self.e.commit(s)
+
+    def control(self,sid,action):
+        with self.e.lock:
+            s=self.e.get(sid)
+            require(s.get('task_mode')=='figma_external','Wrong session mode')
+            if action=='pause':
+                require(s['state']=='recording','Pause requires an active recording')
+                result=self.e.stop(sid,'researcher_pause')
+            elif action=='resume':result=self.e.step(sid,'resume')
+            elif action=='abort':result=self.e.stop(sid,'researcher_abort',withdraw=True)
+            else:require(False,'Unknown control',422)
+            result.setdefault('audit',[]).append({'action':action,'actor':'researcher','at':utc()})
+            return self.e.commit(result)
 
     def reset(self,sid,reason):
         with self.e.lock:
@@ -160,5 +192,11 @@ class External:
             if mode=='hardware':
                 require(self.e.config['protocol']['approved'],'ตรวจและยืนยัน protocol ใน Questionnaires ก่อนใช้ Tobii จริง')
                 require(self.e.devices['hardware'].status().get('connected'),'ไม่พบ Tobii บนเครื่องนี้')
-            p=self.e.add_participant()
-            return self.create(p['participant_id'],track_id,mode,limits,native_mouse)
+            assignment=plan(self.e,mode)
+            pid=next(p for p,t in assignment['assignments'].items() if t==track_id)
+            if not any(p['participant_id']==pid for p in self.e.participants):
+                updated=self.e.participants+[{'participant_id':pid,'created_at':utc()}]
+                atomic_json(self.e.participants_path,updated);self.e.participants=updated
+            result=self.create(pid,track_id,mode,limits,native_mouse)
+            result['assignment']=copy.deepcopy(assignment)
+            return self.e.commit(result)

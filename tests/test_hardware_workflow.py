@@ -44,7 +44,9 @@ def validate(e,d,v,sid,shift=0):
 
 def test_hardware_validation_record_export_and_restart(tmp_path):
     e,x,d,v,sid=prepared(tmp_path);validate(e,d,v,sid)
-    assert e.get(sid)['state']=='pre'
+    assert e.get(sid)['state']=='practice'
+    from backend.practice import practice_action
+    for action in ('button','menu','search','status','complete'):practice_action(e,sid,action)
     e.answers(sid,'pre',{'department':'QA','age':22,'gender':'หญิง','year':'ปี 4','leb2_frequency':'บางครั้ง'})
     e.metadata(sid,{'viewport':VIEW,'synchronization':[]})
     for i in range(4):
@@ -81,6 +83,8 @@ def test_display_order_empty_stream_and_identity_guards(tmp_path):
 
 def test_recording_requires_current_validation_and_same_device(tmp_path):
     e,x,d,v,sid=prepared(tmp_path);validate(e,d,v,sid)
+    from backend.practice import practice_action
+    for action in ('button','menu','search','status','complete'):practice_action(e,sid,action)
     e.answers(sid,'pre',{'department':'QA','age':22,'gender':'หญิง','year':'ปี 4','leb2_frequency':'บางครั้ง'})
     e.metadata(sid,{'viewport':VIEW,'synchronization':[]})
     d.serial='different'
@@ -103,6 +107,8 @@ def test_invalid_gaze_is_never_a_validation_pass():
 
 def test_native_mouse_queue_is_scoped_to_trial_and_exported(tmp_path):
     e,x,d,v,sid=prepared(tmp_path);validate(e,d,v,sid)
+    from backend.practice import practice_action
+    for action in ('button','menu','search','status','complete'):practice_action(e,sid,action)
     e.answers(sid,'pre',{'department':'QA','age':22,'gender':'หญิง','year':'ปี 4','leb2_frequency':'บางครั้ง'})
     e.metadata(sid,{'viewport':VIEW,'synchronization':[]})
     class FakeMouse:
@@ -141,6 +147,8 @@ def test_mock_allocation_does_not_consume_hardware_track(tmp_path):
 
 def test_missing_gaze_stops_hardware_trial_incomplete(tmp_path):
  e,x,d,v,sid=prepared(tmp_path);validate(e,d,v,sid)
+ from backend.practice import practice_action
+ for action in ('button','menu','search','status','complete'):practice_action(e,sid,action)
  e.answers(sid,'pre',{'department':'QA','age':22,'gender':'หญิง','year':'ปี 4','leb2_frequency':'บางครั้ง'})
  e.metadata(sid,{'viewport':VIEW,'synchronization':[]})
  x.start(sid,'r',CHECKS);e.drain();e.last_gaze_us=now_us()-4000000;e.tick()

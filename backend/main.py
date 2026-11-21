@@ -98,7 +98,7 @@ def create_app(data_root=None, auth_enabled=True):
             if identity["role"] != "researcher":
                 prefix = "/api/sessions/" + identity["sid"]
                 suffix = path[len(prefix):] if path.startswith(prefix) else None
-                allowed = (request.method == "GET" and suffix == "") or (request.method in ("POST", "PUT") and suffix is not None and re.fullmatch(r"/(?:answers/(?:pre|post)|drafts/(?:pre|post)|metadata|calibration/(?:start|point)|validation/(?:start|point)|trials/(?:start|complete)|events|stop|withdraw|step/(?:information|consent|resume|finish))", suffix))
+                allowed = (request.method == "GET" and suffix == "") or (request.method in ("POST", "PUT") and suffix is not None and re.fullmatch(r"/(?:practice/(?:button|menu|search|status|complete)|answers/(?:pre|post)|drafts/(?:pre|post)|metadata|calibration/(?:start|point)|validation/(?:start|point)|trials/(?:start|complete)|events|stop|withdraw|step/(?:information|consent|resume|finish))", suffix))
                 if not allowed:
                     return JSONResponse({"detail": "บทบาทนี้ไม่มีสิทธิ์เข้าถึงข้อมูลนี้"}, status_code=403)
         response = await call_next(request)
@@ -181,6 +181,7 @@ def create_app(data_root=None, auth_enabled=True):
 
     @app.post("/api/external/{sid}/{action}")
     def external_action(sid: str, action: str, value: dict, x_participant_client: str = Header(default="")):
+        if action in ('pause','resume','abort'):return external.control(sid,action)
         if action == "heartbeat":return external.beat(sid,x_participant_client)
         if action == "start":return external.start(sid,x_participant_client,value)
         if action == "end":return external.end(sid,x_participant_client)
@@ -189,6 +190,26 @@ def create_app(data_root=None, auth_enabled=True):
         if action == "release":return external.release(sid,value.get("reason"))
         if action == "answer":return external.answer(sid,value.get("late"),value.get("quiz"))
         raise LabError("Unknown external action",404)
+
+    @app.get('/api/assignments')
+    def assignments(mode: str = 'mock'):
+        from .assignment import plan
+        return plan(engine,mode)
+
+    @app.put('/api/assignments')
+    def assignments_update(value: dict):
+        from .assignment import save_plan
+        return save_plan(engine,value.get('mode'),value.get('seed'))
+
+    @app.get('/api/tracks/validate')
+    def tracks_validate():
+        from .tracks import validate_tracks
+        return validate_tracks()
+
+    @app.post('/api/sessions/{sid}/practice/{action}')
+    def practice(sid: str, action: str):
+        from .practice import practice_action
+        return practice_action(engine,sid,action)
 
     @app.get("/api/tracks")
     def tracks(mode: str | None = None):
@@ -216,9 +237,24 @@ def create_app(data_root=None, auth_enabled=True):
     def session_create(value: CreateSession):
         return engine.create(value)
 
+    @app.get('/api/dataset/validate')
+    def dataset_validate():
+        from .quality import quality_report
+        from .tracks import validate_tracks
+        with engine.lock:
+            return {'tracks':validate_tracks(),'sessions':[quality_report(s,engine.storage.rows(s,'gaze')) for s in engine.sessions.values()]}
+
+    @app.get('/api/export/history')
+    def export_history():
+        from .export_history import history
+        return history(engine)
+
     @app.get("/api/export")
-    def export_all():
-        data = export_sessions(engine, list(engine.sessions))
+    def export_all(include_demo: bool = False):
+        from .export_history import record_export
+        with engine.lock:
+            ids=[sid for sid,s in engine.sessions.items() if include_demo or s['mode']=='hardware']
+            data=record_export(engine,ids,export_sessions(engine,ids))
         return Response(data, media_type="application/zip", headers={"Content-Disposition": 'attachment; filename="eyetrack-all.zip"'})
 
     @app.get("/api/sessions/{sid}")
@@ -238,7 +274,9 @@ def create_app(data_root=None, auth_enabled=True):
 
     @app.get("/api/sessions/{sid}/export")
     def export(sid: str):
-        data = export_sessions(engine, [sid])
+        from .export_history import record_export
+        with engine.lock:
+            data=record_export(engine,[sid],export_sessions(engine,[sid]))
         return Response(data, media_type="application/zip", headers={"Content-Disposition": f'attachment; filename="{sid}.zip"'})
 
     @app.post("/api/sessions/{sid}/step/{action}")

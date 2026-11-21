@@ -180,3 +180,8 @@ Task บน Figma ยังคงใช้ manual start/end ของนัก�
 - [x] Figma links reuse a named session tab instead of accumulating tabs.
 - [x] Hardware discovery refreshes every 5 seconds and explains local-backend requirement.
 - [ ] Physical connection requires the device computer and its diagnostic report; not verified remotely.
+
+
+## 2026-11-21 — Master prompt audit
+
+See [MASTER_PROMPT_REPORT.md](MASTER_PROMPT_REPORT.md) for the current acceptance matrix, changed files, 68 Python / 5 Node tests, complete isolated browser flow, startup/shutdown checks, backup and actual hardware/Figma limitations. Earlier dated sections are historical evidence, not current acceptance.

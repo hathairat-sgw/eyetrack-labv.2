@@ -23,3 +23,5 @@ work/
 *.key
 playwright-report/
 test-results/
+
+web-dist/

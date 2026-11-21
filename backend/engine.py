@@ -93,7 +93,9 @@ class Engine:
 
     def add_participant(self):
         with self.lock:
-            number = max([int(p["participant_id"][1:]) for p in self.participants] or [0]) + 1
+            used={p['participant_id'] for p in self.participants}
+            number=next((i for i in range(1,31) if f'P{i:03d}' not in used),None)
+            require(number is not None,'All P001-P030 participant IDs have been allocated')
             participant = {"participant_id": f"P{number:03d}", "created_at": utc()}
             updated = self.participants + [participant]
             atomic_json(self.participants_path, updated)
@@ -158,7 +160,7 @@ class Engine:
             elif action == "consent":
                 require(session["state"] == "consent", "ขั้นตอนยินยอมไม่ถูกต้อง")
                 session["consent"] = {"accepted_at": utc(), "protocol_version": session["snapshot"]["protocol"]["version"]}
-                session["state"] = "calibration" if session.get("workflow_version") == "calibration-before-pre-v1" else "pre"
+                session["state"] = "calibration" if session.get("workflow_version") in ("calibration-before-pre-v1","calibration-practice-pre-v2") else "pre"
             elif action == "resume":
                 require(session["state"] == "interrupted", "Session ไม่ได้ถูกขัดจังหวะ")
                 require(not self.fatal_error, "ต้องแก้ปัญหาการเขียนไฟล์และ restart backend ก่อน")
@@ -177,9 +179,16 @@ class Engine:
         with self.lock:
             session = copy.deepcopy(self.get(sid))
             require(session["state"] == phase and phase in ("pre", "post"), "ไม่อยู่ในขั้นตอนแบบสอบถามนี้")
+            if phase=='pre' and session.get('workflow_version')=='calibration-practice-pre-v2':
+                require(session.get('practice_completed'),'Practice is required before Pre-test')
             questionnaire = session["snapshot"][phase]
             require(set(answers) <= {q["id"] for q in questionnaire["questions"]}, "พบคำตอบที่ไม่มีคำถาม", 422)
+            answers=dict(answers)
             for q in questionnaire["questions"]:
+                rule=q.get('show_if')
+                if rule and answers.get(rule['question_id'])!=rule['equals']:
+                    answers.pop(q['id'],None)
+                    continue
                 value = answers.get(q["id"])
                 missing = value is None or value == [] or (isinstance(value, str) and not value.strip())
                 if q["required"]:
@@ -198,7 +207,7 @@ class Engine:
                     require(isinstance(value, str) and len(value) <= (1000 if q["type"] == "short" else 10000), "ข้อความยาวเกินกำหนด", 422)
             session.setdefault("drafts", {}).pop(phase, None)
             session["responses"][phase] = {"version": questionnaire["version"], "answers": answers, "submitted_at": utc()}
-            session["state"] = ("instructions" if session.get("workflow_version") == "calibration-before-pre-v1" else "calibration") if phase == "pre" else "thankyou"
+            session["state"] = ("instructions" if session.get("workflow_version") in ("calibration-before-pre-v1","calibration-practice-pre-v2") else "calibration") if phase == "pre" else "thankyou"
             # Metadata is authoritative; CSV is materialized during export to avoid partial questionnaire writes.
             return self.commit(session)
 
@@ -297,6 +306,9 @@ class Engine:
                 session["calibration"]["finished_at"] = utc()
                 session["calibration_attempts"].append(copy.deepcopy(session["calibration"]))
                 session["state"] = ("pre" if session.get("workflow_version") == "calibration-before-pre-v1" and "pre" not in session["responses"] else "instructions") if final["success"] else "calibration"
+                if final['success'] and session.get('workflow_version')=='calibration-practice-pre-v2':
+                    from .practice import after_calibration
+                    session['state']=after_calibration(session)
                 self.calibrating = None
                 if final["success"] and session["mode"] == "hardware":
                     session["state"] = "validation"

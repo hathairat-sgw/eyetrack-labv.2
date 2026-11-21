@@ -5,12 +5,13 @@ import json
 import zipfile
 from .storage import FIELDS, NATIVE_FIELDS, mouse_rows
 from .quality import quality_report
+from .export_schema import EXTRA, enrich, readme
 
-def csv_bytes(name, rows):
+def csv_bytes(name, rows, session=None):
     stream = io.StringIO(newline="")
-    writer = csv.DictWriter(stream, fieldnames=FIELDS[name], extrasaction="ignore")
+    writer = csv.DictWriter(stream, fieldnames=FIELDS[name]+(EXTRA.get(name,[]) if session else []), extrasaction="ignore")
     writer.writeheader()
-    writer.writerows(rows)
+    writer.writerows(enrich(name,rows,session) if session else rows)
     return stream.getvalue().encode("utf-8-sig")
 
 def export_sessions(engine, ids):
@@ -44,7 +45,7 @@ def export_sessions(engine, ids):
                     task_ids = {t["id"] for t in session["tasks"]}
                     if any(r["trial_id"] not in trial_ids or r["task_id"] not in task_ids for r in rows):
                         raise ValueError("Unknown trial/task identifier in " + name)
-                archive.writestr(prefix + name + ".csv", csv_bytes(name, rows))
+                archive.writestr(prefix + name + ".csv", csv_bytes(name, rows, session))
             if session.get("task_mode") == "figma_external":
                 from .gaze_features import derive_gaze
                 features = derive_gaze(engine.storage.rows(session,"gaze"),session)
@@ -86,6 +87,6 @@ def export_sessions(engine, ids):
             if session.get("validation"):
                 archive.writestr(prefix + "validation.json", json.dumps({"current":session["validation"],"previous_attempts":session.get("validation_attempts",[])},ensure_ascii=False,indent=2))
             archive.writestr(prefix + "session.json", json.dumps(session, ensure_ascii=False, indent=2))
-            archive.writestr(prefix + "README.txt", "Raw timestamps retain their original units. Browser timestamp = performance.now() milliseconds. Backend = perf_counter microseconds. Tobii timestamps = SDK microseconds. See session metadata for clock alignment. Incomplete trials are never assigned a fabricated end time. Demo data is not research data.")
+            archive.writestr(prefix + "README.txt", readme(session,{k:v+EXTRA.get(k,[]) for k,v in FIELDS.items()}))
     return output.getvalue()
 

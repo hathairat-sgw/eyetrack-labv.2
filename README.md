@@ -1,5 +1,25 @@
 # EyeTrack Lab
 
+## Online Demo
+
+[เปิด EyeTrack Lab Demo](https://eyetrack-lab-demo-hathairat.hathairat-sss.chatgpt.site) · [Source code](https://github.com/hathairat-sgw/eyetrack-lab)
+
+Demo ออนไลน์ใช้ browser storage ของผู้เปิดเว็บ ไม่เชื่อม Tobii ไม่สร้าง gaze และไม่ส่งคำตอบไปยัง backend วิจัย. เปิดครั้งแรกอาจต้องเข้าสู่ระบบ ChatGPT ด้วยบัญชีเจ้าของ Site. ระบบวิจัยจริงยังใช้ขั้นตอน Run All บนเครื่องอุปกรณ์ด้านล่าง. [คู่มือ Demo และการเผยแพร่](docs/ONLINE_DEMO.md)
+
+
+## อัปเดตตาม Master Prompt — 21 พฤศจิกายน 2026
+
+ทำงานที่ EyeTrack Lab เท่านั้น ไม่รวม OceanX. รายงานรอบนี้: [MASTER_PROMPT_REPORT.md](docs/MASTER_PROMPT_REPORT.md). ข้อมูลเดิมใน `data/` ไม่ถูกย้าย ลบ หรือแปลง schema. สำรอง source/config ก่อนแก้ไว้ที่ `work/backups/master-audit-25691121-122734`.
+
+- VS Code: เปิด `eyetrack-lab.code-workspace` → Terminal → Run Task → **Run All - EyeTrack Lab**, หรือ **F5 → EyeTrack Lab: Run all**. PowerShell ใช้ `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run.ps1`.
+- Dependencies บนเครื่องนี้พร้อมแล้ว. เครื่องใหม่รัน `Setup-Windows.cmd` ครั้งเดียวก่อนเริ่ม. Launcher ตรวจ Python imports, พอร์ต, Backend health และ Frontend ก่อนเปิด browser; ไม่หยุด process อื่นเมื่อพอร์ตชน.
+- หากเปิดเวอร์ชันเก่าอยู่: จบรอบและหยุดวิดีโอก่อน แล้ว Stop ใน VS Code และ F5 ใหม่เพื่อโหลด Backend รุ่นนี้. Session เดิมคง workflow เดิม; **Session ใหม่** ใช้ ยินยอม → Calibration/Validation → Practice 4 กิจกรรม → Pre-test → Baseline/GB/GG/BB → Post-test → Completion.
+- `Track Assignment` ในหน้าผู้วิจัย: seed ว่าง = P001→T01 ... P030→T30; ใส่ seed เพื่อสุ่มแบบไม่คืน. เปลี่ยนได้ก่อนสร้าง session แรกของโหมดนั้นเท่านั้น. การเปิดคนเดิมใช้ session/track เดิม.
+- Practice ไม่เขียนลง gaze/clicks/trials หลัก. ผู้วิจัยสั่งฝึกซ้ำได้ก่อนเริ่ม trial แรก. Pause ปิด attempt เดิมเป็น incomplete; Resume ต้อง Calibration ใหม่ก่อนเริ่ม attempt ใหม่. Abort เก็บข้อมูลเดิมและล็อก Track ของผู้ที่ให้ความยินยอมแล้วไว้.
+- Export All ไม่รวม Mock โดยปริยาย; เลือกรวม DEMO อย่างชัดเจนได้. มี Validate Dataset และ Export History. ZIP มีไฟล์หลักครบ 9 รายการต่อ session และคงไฟล์หลักฐานเสริมเดิมไว้. [Data dictionary](docs/DATA_DICTIONARY.md), machine schema: `config/export-schema.json`.
+- **ยังไม่พร้อมประกาศรับรองการเก็บวิจัยจริง**: discovery รอบนี้ไม่พบ Tobii (`connected=false`, `simulated=false`); ยังไม่ยืนยัน hardware calibration/gaze/ถอดสาย/DPI/timing จริง. พบรายชื่อ flow ใน Figma ที่เปิดอยู่ แต่ยังไม่ผ่านตรวจ interaction/starting frame ทุกแบบหรือ Embed API events. Native web ยังไม่ครบทุก variant. ตรวจ protocol/consent ฉบับจริงและอนุมัติในระบบก่อนสร้าง hardware session.
+
+
 ระบบเก็บการทดลอง LEB2 บน localhost สำหรับ Windows: React/Vite + FastAPI + Tobii Pro SDK เก็บ JSON/CSV/วิดีโอไว้ในเครื่อง ไม่มีฐานข้อมูลหรือ cloud storage
 
 ## เริ่มใช้งานบนคอมพิวเตอร์ที่ต่อ Tobii

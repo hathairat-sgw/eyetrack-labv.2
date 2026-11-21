@@ -1,0 +1,64 @@
+import React,{useEffect,useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import {Eye,ArrowLeft,Download,Maximize,CheckCircle2,FlaskConical,Monitor,ExternalLink} from 'lucide-react';
+import QuestionForm from '../src/QuestionnaireForm';
+import Practice from '../src/Practice';
+import registry from '../../config/tracks.json';
+import questionnaires from '../../config/questionnaires-irb.json';
+import {createDemo} from './engine.mjs';
+import {exportDemo} from './export.mjs';
+import '../src/styles.css';
+import './style.css';
+const engine=createDemo(registry,questionnaires,localStorage);
+const labels={information:'เริ่มต้น',consent:'ยินยอม Demo',calibration:'จำลอง Calibration',practice:'Practice',pre:'Pre-test',instructions:'เตรียมรอบ',recording:'กำลังทำรอบ',post:'Post-test',completed:'เสร็จแล้ว'};
+const stages=['information','consent','calibration','practice','pre','instructions','post','completed'];
+function download(sessions){const bytes=exportDemo(sessions),url=URL.createObjectURL(new Blob([bytes],{type:'application/zip'}));const a=document.createElement('a');a.href=url;a.download='eyetrack-web-demo.zip';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function Fixture({session,record,onSubmit}){
+ const [query,setQuery]=useState(''),[menu,setMenu]=useState(false),[opened,setOpened]=useState(false);
+ const capture=type=>e=>{const target=e.target.closest('[data-component]');if(!target)return;record({event_type:type,browser_timestamp_ms:performance.now(),time_origin_ms:performance.timeOrigin,x:e.clientX,y:e.clientY,target_element_id:target.id||'',target_component:target.dataset.component,scroll_x:scrollX,scroll_y:scrollY,viewport_width:innerWidth,viewport_height:innerHeight})};
+ return <section className="playground" onClickCapture={capture('click')} onMouseDownCapture={capture('mouse_down')} onMouseUpCapture={capture('mouse_up')}>
+ <header><strong>Learning Workspace</strong><span>Native demo fixture</span></header><nav><button id="fixture-menu" data-component="Menu" onClick={()=>setMenu(!menu)}>เมนูวิชา</button>{menu&&<span>หน้าหลัก · รายวิชา · สถานะ</span>}</nav>
+ <main><p className="eyebrow">PRACTICE WEBSITE · TEST {session.task_index}</p><h2>ค้นหาและเปิดข้อมูลวิชา</h2><label>ค้นหาวิชา<input id="fixture-search" data-component="Search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="พิมพ์ Demo Lab"/></label>
+ {(!query||'demo lab'.includes(query.toLowerCase()))&&<button id="fixture-course" data-component="Button" className="course" onClick={()=>setOpened(true)}><strong>Demo Lab</strong><span>วิชาฝึกสำหรับทดลองระบบ</span></button>}
+ {opened&&<div className="fixture-detail"><p id="fixture-status" data-component="Status" tabIndex="0">สถานะ: พร้อมส่งคำตอบทดลอง</p><button id="fixture-submit" data-component="Button" className="primary" onClick={onSubmit}>ส่งคำตอบทดลอง</button></div>}
+ </main></section>
+}
+function App(){
+ const [sid,setSid]=useState(null),[sessions,setSessions]=useState(()=>engine.all()),[session,setSession]=useState(null),[error,setError]=useState(''),[consent,setConsent]=useState(false),[point,setPoint]=useState(null),[busy,setBusy]=useState(false);
+ const refresh=()=>{setSessions(engine.all());if(sid)setSession(engine.get(sid))};
+ useEffect(()=>{const handler=()=>{try{refresh()}catch(e){setError(e.message)}};window.addEventListener('storage',handler);return()=>window.removeEventListener('storage',handler)},[sid]);
+ const perform=(action,value)=>{setError('');try{const next=engine.act(sid,action,value);setSession(next);setSessions(engine.all());return next}catch(e){setError(e.message);throw e}};
+ const open=n=>{try{const s=engine.open(n);setSid(s.session_id);setSession(s);setSessions(engine.all());setConsent(false);setError('');window.scrollTo(0,0)}catch(e){setError(e.message)}};
+ async function calibrate(){setBusy(true);try{for(let i=0;i<5;i++){setPoint(i);await new Promise(r=>setTimeout(r,600))}perform('calibrate')}catch{}finally{setBusy(false);setPoint(null)}}
+ function record(event){try{setSession(engine.event(sid,event))}catch(e){setError(e.message)}}
+ const safe=(a,v)=>{try{perform(a,v)}catch{}};
+ const selected=stages.indexOf(session?.state==='recording'?'instructions':session?.state);
+ const round=session?.track.rounds[session.task_index];
+ const finished=!!session?.trials.length&&session.clicks.some(e=>e.trial_id===session.trials.at(-1).trial_id&&e.target_element_id==='fixture-submit'&&e.event_type==='click');
+ return <div className="online-demo"><div className="demo-banner"><FlaskConical size={17}/><strong>ONLINE DEMO</strong><span>ไม่เชื่อม Tobii · ไม่สร้างข้อมูลสายตา · ข้อมูลอยู่เฉพาะเบราว์เซอร์นี้</span></div>
+ <header className="web-header"><a href="./" className="web-brand"><span><Eye size={22}/></span><b>EyeTrack <i>Lab</i></b></a><span className="web-subtitle">Research workflow rehearsal</span><a href="https://github.com/hathairat-sgw/eyetrack-lab" target="_blank" rel="noopener noreferrer">Source code <ExternalLink size={14}/></a></header>
+ <main className="web-main">{error&&<div className="error" role="alert">{error}</div>}
+ {!session?<><div className="web-intro"><p className="eyebrow">BROWSER DEMO / LOCAL DATA</p><h1>ทดลองขั้นตอนวิจัย<br/><span>ก่อนเริ่มเก็บข้อมูลจริง</span></h1><p>เลือกผู้ทดลองเพื่อฝึก Calibration จำลอง, Practice, แบบสอบถาม และงาน 4 รอบ<br/>ใช้ข้อมูลสมมติในการกรอก ระบบนี้ไม่ส่งคำตอบไปยังเซิร์ฟเวอร์</p><div className="button-row"><button className="primary" onClick={()=>open(1)}><FlaskConical size={18}/> เริ่ม Demo คนที่ 1</button><button className="secondary" disabled={!sessions.length} onClick={()=>download(sessions)}><Download size={17}/> Export Demo ทั้งหมด</button></div></div>
+ <div className="web-stats"><div><strong>{sessions.filter(s=>s.state==='completed').length}<small> / 30</small></strong><span>ทำครบแล้วในเบราว์เซอร์นี้</span></div><div><strong>4</strong><span>Baseline · GB · GG · BB</span></div><div><strong>0</strong><span>ข้อมูล gaze จริงบนเว็บ Demo</span></div></div>
+ <div className="web-section-title"><div><h2>ผู้ทดลอง Demo</h2><p>Track ตามลำดับ · กดคนเดิมเพื่อทำต่อ</p></div><span>30 participants / 3 groups</span></div>
+ <div className="web-grid">{registry.tracks.map((t,i)=>{const s=sessions.find(v=>v.participant_id==='P'+String(i+1).padStart(3,'0'));return <button key={t.track_id} className={'web-person '+(s?.state==='completed'?'complete':'')} onClick={()=>open(i+1)}><span className={'avatar group-'+t.group}>{String(i+1).padStart(2,'0')}</span><span className="person-status">{s?labels[s.state]:'ยังไม่เริ่ม'}</span><h3>P{String(i+1).padStart(3,'0')}</h3><p>{t.track_id} · Group {t.group}</p><span className="person-action">{s?'เปิดเพื่อดู / ทำต่อ':'เริ่ม Demo'}</span></button>})}</div>
+ <details className="panel padded"><summary>ข้อมูลบนเว็บนี้และข้อจำกัด</summary><p>แบบสอบถามใช้ config ฉบับเดียวกับโปรแกรมหลัก พิกัด mouse เป็นเหตุการณ์จริงเฉพาะ native playground ด้านใน ไม่ได้อ่านการคลิกใน Figma และไม่ใช้แทนข้อมูลวิจัย เก็บผลใน localStorage แยกจากแอปบนเครื่อง ผู้ใช้เครื่องเดียวกันอาจเข้าถึงผล Demo นี้ได้</p><p>Native playground ไม่ใช่การสร้าง Figma variants ทุกแบบใหม่ การแสดงชื่อ GB/GG/BB เป็นการฝึกลำดับ ไม่ใช่สิ่งเร้าที่ผ่านการรับรอง</p><button className="secondary" onClick={()=>{if(confirm('ล้างข้อมูล Demo เฉพาะเบราว์เซอร์นี้? Export ก่อนหากต้องการเก็บไว้')){engine.clear();setSessions([])}}}>ล้าง Demo บนเบราว์เซอร์นี้</button></details></>:
+ <><div className="session-top"><button className="text-button" onClick={()=>{setSession(null);setSid(null);setSessions(engine.all())}}><ArrowLeft size={16}/> รายชื่อผู้ทดลอง</button><span>{session.participant_id} · {session.track_id} · Group {session.group}</span><button className="secondary" onClick={()=>download([engine.get(sid)])}><Download size={16}/> Export คนนี้</button></div>
+ <ol className="web-progress">{['ข้อมูล','ยินยอม','Calibration','Practice','Pre-test','4 รอบ','Post-test','เสร็จ'].map((name,i)=><li key={name} className={i<=selected?'done':''}><span>{i+1}</span>{name}</li>)}</ol>
+ <section className="web-card">
+ {point!==null?<div className="demo-calibration"><h2>จำลอง Calibration · {point+1}/5</h2><p>ไม่มีการเชื่อมต่อหรือรับรองอุปกรณ์จริง</p><div className={'calibration-dot point-'+point}/></div>:<>
+ {session.state==='information'&&<><p className="eyebrow">WELCOME TO EYETRACK LAB</p><h1>เตรียมพร้อมสำหรับ Demo</h1><p>ฝึก flow ของโปรแกรมด้วยข้อมูลสมมติ ผลลัพธ์ถูกเก็บในเบราว์เซอร์นี้เท่านั้น ไม่ใช่ข้อมูลผู้เข้าร่วมวิจัยจริง</p><div className="soft-panel"><strong>ลำดับการทดลอง</strong><p>ยินยอม Demo → Calibration จำลอง → Practice → Pre-test → 4 รอบ → Post-test → Export</p></div><button className="primary" onClick={()=>safe('information')}>อ่านและดำเนินการต่อ</button></>}
+ {session.state==='consent'&&<><h1>ยืนยันการทดลอง Demo</h1><p>ใช้คำตอบสมมติ และอย่ากรอกข้อมูลส่วนบุคคลจริง แบบฟอร์มนี้เป็นการฝึก ไม่ใช่เอกสารยินยอมเข้าร่วมงานวิจัย</p><label className="choice"><input type="checkbox" checked={consent} onChange={e=>setConsent(e.target.checked)}/>ฉันเข้าใจและต้องการทดลอง Demo</label><button className="primary" disabled={!consent} onClick={()=>safe('consent',true)}>ยืนยัน Demo</button></>}
+ {session.state==='calibration'&&<><p className="eyebrow">DEVICE NOT CONNECTED</p><h1>จำลองขั้นตอน Calibration</h1><p>ขั้นตอนนี้แสดงจุด 5 จุดเพื่อฝึก flow เท่านั้น ไม่มี Tobii ไม่มี gaze stream และไม่บันทึกว่า Hardware Calibration ผ่าน</p><button className="primary" disabled={busy} onClick={calibrate}>เริ่มจำลอง Calibration 5 จุด</button></>}
+ {session.state==='practice'&&<Practice session={session} busy={busy} act={async path=>perform(path.endsWith('/complete')?'practice_complete':path.split('/').at(-1))}/>}
+ {['pre','post'].includes(session.state)&&<><p className="eyebrow">{session.state==='pre'?'PRE-TEST':'POST-TEST'} · DEMO ANSWERS ONLY</p><h1>แบบสอบถาม{session.state==='pre'?'ก่อน':'หลัง'}ทดลอง</h1><QuestionForm key={session.state} definition={session.snapshot[session.state]} initialDraft={session.drafts[session.state]} onSaveDraft={(answers,revision)=>Promise.resolve(engine.draft(sid,session.state,answers,revision))} onSubmit={answers=>perform(session.state,answers)}/></>}
+ {session.state==='instructions'&&<><p className="eyebrow">TEST {round.test_index} / 3</p><h1>{round.family==='baseline'?'Baseline':round.family} · เตรียมภารกิจ</h1><p>ตารางอ้างอิง: {round.variant_label}</p><div className="soft-panel"><strong>ภารกิจสำหรับทดสอบระบบ</strong><p>ค้นหาวิชา Demo Lab เปิดข้อมูลวิชา อ่านสถานะ แล้วกดส่งคำตอบทดลอง</p><small>Playground เหมือนกันทั้ง 4 รอบ ไม่ใช้ทดสอบผล Good/Bad และไม่สร้างข้อมูล gaze</small></div><div className="button-row"><button className="primary" onClick={()=>safe('start')}>เริ่มรอบ Demo</button><a className="secondary" href={round.figma_url} target="_blank" rel="noopener noreferrer">ดู Figma อ้างอิง <ExternalLink size={15}/></a></div><p className="muted">ลิงก์อ้างอิงยังไม่ผ่านตรวจรับทุก frame; การคลิกใน Figma ไม่ถูกเก็บโดย Demo นี้</p></>}
+ {session.state==='recording'&&<><div className="spread"><div><p className="eyebrow">NATIVE DEMO · TEST {session.task_index}</p><h1>ภารกิจ {round.family}</h1></div><button className="secondary" onClick={()=>document.documentElement.requestFullscreen().catch(e=>setError(e.message))}><Maximize size={16}/> Fullscreen</button></div><p>ค้นหา Demo Lab → เปิดวิชา → อ่านสถานะ → ส่งคำตอบทดลอง</p><Fixture key={session.trials.at(-1).trial_id} session={session} record={record} onSubmit={()=>{}}/><div className="spread task-end"><span>{session.clicks.filter(e=>e.trial_id===session.trials.at(-1).trial_id&&e.event_type==='click').length} clicks · gaze ไม่ถูกเก็บ</span><button className="primary" disabled={!finished} onClick={()=>safe('finish')}>จบรอบ Demo</button></div></>}
+ {session.state==='completed'&&<><CheckCircle2 size={44} color="#228477"/><h1>ทดลองครบแล้ว</h1><p>บันทึกแบบสอบถามและภารกิจครบ 4 รอบแล้ว ผลนี้เป็น Demo ในเบราว์เซอร์ ไม่ใช่ข้อมูลวิจัยจริง</p><button className="primary" onClick={()=>download([engine.get(sid)])}><Download size={17}/> Download Demo Dataset</button><div className="soft-panel"><p>ZIP มี 9 ไฟล์หลัก: clicks.csv, gaze.csv, participants.csv, pre_test.csv, post_test.csv, trials.csv, session.json, quality_report.json, README.txt</p><p>gaze.csv มีเฉพาะ header เพราะเว็บนี้ไม่ได้เชื่อมต่อ Tobii</p></div></>}
+ </>}
+ </section></>}
+ <footer className="web-footer"><span>EyeTrack Lab · Online Demo</span><span><Monitor size={15}/> ระบบวิจัยจริงใช้ Python + Tobii บนเครื่องอุปกรณ์</span></footer>
+ </main></div>
+}
+class Boundary extends React.Component{state={error:null};static getDerivedStateFromError(error){return {error}}render(){return this.state.error?<main style={{padding:40}}><h1>เปิด Demo ไม่สำเร็จ</h1><p>{this.state.error.message}</p><p>โปรดอนุญาต browser storage หรือใช้หน้าต่างปกติ แล้วโหลดใหม่</p></main>:this.props.children}}
+createRoot(document.getElementById('root')).render(<Boundary><App/></Boundary>);
